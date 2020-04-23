@@ -3,6 +3,7 @@
 > Many thanks to the Roam Slack community for all the resources, particularly @Anthony, @Calhistoriaan and @Devon.
 > Edits by Jeff Harris
 > v1.0.10
+SPM Commit Changes: Updated multi-line code blocks (.CodeMirror stuff): White background, active blue-ish, line number orange, bigger font, matching bracket red, selection light yellow
 */
 
 /* RR change: added variables to easily change the theme */
@@ -2135,15 +2136,15 @@ code {
 
 div.CodeMirror .CodeMirror-code pre {
   font-family: var(--code-font);
-  line-height: 1.2em;
-  font-size: 0.9em;
+  line-height: 1.4em; /*1.2em; SPM CHANGED*/
+  font-size: 1.2em; /*0.9em; SPM CHANGED*/
 }
 
 .CodeMirror {background: var(--code-bg); color: #f4f1ed; font-size: 0.85em;}
-div.CodeMirror-selected {background: #272935 !important;}
+div.CodeMirror-selected {background: lemonchiffon !important; /*#272935; SPM CHANGED*/}
 .CodeMirror-gutters {background: #2b2b2b; border-right: 1px solid #333;}
-.CodeMirror-linenumber {color: #5a647e;}
-.CodeMirror-cursor {border-left: 1px solid #d4cfc9 !important;}
+.CodeMirror-linenumber {color: #eb9854; /*#5a647e; SPM CHANGED*/}
+.CodeMirror-cursor {border-left: 1px solid Black !important; /*1px solid #d4cfc9 !important; SPM CHANGED*/}
 
 span.cm-comment {color: #bc9458;}
 span.cm-atom {color: #b6b3eb;}
@@ -2163,10 +2164,11 @@ span.cm-link {color: #b6b3eb;}
 
 .cm-s-default .cm-atom { color: #2983bb;}
 
-.CodeMirror-matchingbracket { text-decoration: underline; color: white !important;}
-.CodeMirror-activeline-background { background: #303040; }
+.CodeMirror-matchingbracket { text-decoration: none; color: Red !important; background-color: yellow; /*text-decoration: underline; color: white !important; SPM CHANGED*/}
+.CodeMirror-activeline-background { background: #e8f2ff; /*#303040; SPM CHANGED*/}
 
-.CodeMirror pre {background: #2b2b2b;}
+.CodeMirror-lines {background: #fff; /*.CodeMirror pre {background: #2b2b2b; SPM CHANGED*/}
+.CodeMirror-activeline pre {background: #e8f2ff; /* SPM ADDED */}
 
 /*RR change: incorporating a great idea from @Devon to hide the tool bar when not in use.
 source: https://gist.github.com/devonzuegel/f54de76cbf0c0355d93e721c89f45787;
