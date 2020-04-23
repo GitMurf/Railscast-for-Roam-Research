@@ -7,6 +7,11 @@
 
 /* RR change: added variables to easily change the theme */
 :root {
+  /* SPM Added Variables */
+  --starred-font-size: 1.3em;
+  --reference-item-parent-color: #508BB5;
+  --reference-item-parent-sep-color: gainsboro;
+  /* END OF SPM Added Variables */
   /* Primary fonts */
   --main-font: 'Inter', sans-serif;
   /* --main-font: 'Calendas Plus', serif; */
@@ -25,7 +30,7 @@
   --h3-font-color: #1189BD;
   --strong: #508BB5;
   --emphasis: #c43835;
-  --tag-font-color: #777;
+  --tag-font-color: #fff; /* #777; SPM CHANGED */
   --tag-font-color-hover:#fff;
   --tag-hover-bg:#e98924;
   --sidebar-font-color: #1189BD;
@@ -101,7 +106,7 @@
 
 /*RR change: Un-comment the section below to maximize page width, line length, and images */
 
-/* 
+/* spm using this */
 .roam-block-container {
   max-width: 100% !important; 
 }
@@ -115,7 +120,7 @@ div.roam-center > div:first-child {
 .hoverparent .react-resizable[style^='width: 500px;'] {
     width: 100% !important;
 }
- */
+/* */
 
 
 @import "../fonts/Inter/inter.css";
@@ -768,7 +773,7 @@ body {
   /*color: #5c7080;*/
   /*RR change: brighten text and font size*/ 
   color: var(--sidebar-font-color);
-  font-size: 1em;
+  font-size: var(--starred-font-size); /* 1em; SPM CHANGED */
 }
 .roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .starred-pages-wrapper .starred-pages .page:hover {
   /*color: #f5f8fa;*/
@@ -1045,6 +1050,8 @@ body {
   color: var(--tag-font-color); /*RR change: theme color*/
   border-radius: 10px;
   padding: 2px 3px 2px 3px;
+  background-color: var(--tag-bg); /* SPM ADDED */
+  text-decoration: none; /* SPM ADDED */
 }
 
 /*RR change: added tag hover style*/
@@ -2108,7 +2115,7 @@ span[style^='background-color: green;'] {
 /* RR Change: single backtick code snippets */
 code { 
     background-color: var(--code-bg);
-    border-radius: 3px;
+    border-radius: 5px; /* 3px; SPM CHANGED */
     color: var(--code-font-color);
     border: 0px solid #13191e;
     padding: 3px 4px 3px 4px;
@@ -2190,3 +2197,17 @@ source: https://gist.github.com/devonzuegel/f54de76cbf0c0355d93e721c89f45787;
 #right-sidebar button {
   z-index: 100;
 } */
+
+/* SPM ADDED FORMATTING */
+.bp3-icon-standard.bp3-icon-tick  {
+    color: white !important;
+}
+
+div.rm-reference-item > div > div > div > span {
+  color: var(--reference-item-parent-color);
+}
+
+div.rm-reference-item > div > div > div > span.bp3-icon-chevron-right {
+  color: var(--reference-item-parent-sep-color);
+}
+/* END OF SPM ADDED FORMATTING */
