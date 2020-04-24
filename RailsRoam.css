@@ -3,7 +3,7 @@
 > Many thanks to the Roam Slack community for all the resources, particularly @Anthony, @Calhistoriaan and @Devon.
 > Edits by Jeff Harris
 > v1.0.10
-SPM Commit Changes: Updated multi-line code blocks (.CodeMirror stuff): White background, active blue-ish, line number orange, bigger font, matching bracket red, selection light yellow
+SPM Commit Changes: Removed the .bp3-icon-tick formatting for the sync checkmark
 */
 
 /* RR change: added variables to easily change the theme */
@@ -2201,9 +2201,11 @@ source: https://gist.github.com/devonzuegel/f54de76cbf0c0355d93e721c89f45787;
 } */
 
 /* SPM ADDED FORMATTING */
+/* Commenting this out on 4/23 due to update/fix on how they show synching status (circle instead of checkmark)
 .bp3-icon-standard.bp3-icon-tick  {
     color: white !important;
 }
+*/
 
 div.rm-reference-item > div > div > div > span {
   color: var(--reference-item-parent-color);
