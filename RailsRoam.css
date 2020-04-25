@@ -3,7 +3,7 @@
 > Many thanks to the Roam Slack community for all the resources, particularly @Anthony, @Calhistoriaan and @Devon.
 > Edits by Jeff Harris
 > v1.0.10
-SPM Commit Changes: Main font to white, tags to gold, page inline search bold, bigger, white background
+SPM Commit Changes: Fixes for max page width for images: https://github.com/jmharris903/Railscast-for-Roam-Research/issues/2
 */
 
 /* RR change: added variables to easily change the theme */
@@ -115,11 +115,16 @@ div.roam-center > div:first-child {
     padding-right: calc((100% - 950px) / 2) !important;
     padding-left: calc((100% - 1500px) / 2) !important;
 }
-.hoverparent[style^='position: relative; width: 500px;'] {
+.hoverparent[style^='position: relative; width: 580px;'] { /* 500px;'] { SPM CHANGE [4/25] */
     width: 100% !important;
 }
+/* SPM COMMENTED OUT [4/25]
 .hoverparent .react-resizable[style^='width: 500px;'] {
     width: 100% !important;
+}
+*/
+.react-resizable[style^='width: 580px;'] { /* SPM ADDED [4/25] */
+  width: 100% !important;
 }
 /* */
 
