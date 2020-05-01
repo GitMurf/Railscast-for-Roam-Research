@@ -28,8 +28,7 @@
   --h2-font-color: #1189BD;
   --h3-font-color: #1189BD;
   --strong: #508BB5;
-  --emphasis: #c43835;
-  --emphasis: #FC5963;
+  --emphasis: #FC5963; /* CHANGED TO MASTER WHEN MERGED... SPM DID HAVE #c43835 */
   --tag-font-color: Gold; /* #777; SPM CHANGED */
   --tag-font-color-hover:#fff;
   --tag-hover-bg:#e98924;
