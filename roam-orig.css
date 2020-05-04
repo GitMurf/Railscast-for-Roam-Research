@@ -1,159 +1,3 @@
-/*
-### ROAM Railscast THEME ###
-> Many thanks to the Roam Slack community for all the resources, particularly @Anthony, @Calhistoriaan and @Devon.
-> Edits by Jeff Harris
-> v1.0.13
-*/
-
-/* RR change: added variables to easily change the theme */
-:root {
-  /* SPM Added Variables */
-  --starred-font-size: 1.3em;
-  --reference-item-parent-color: #508BB5;
-  --reference-item-parent-sep-color: gainsboro;
-  /* END OF SPM Added Variables */
-  /* Primary fonts */
-  --main-font: 'Inter', sans-serif;
-  /* --main-font: 'Calendas Plus', serif; */
-  --main-font-color: white; /* #999; SPM CHANGED */
-  --main-font-size: 1.0em;
-  --code-font: 'Source Code Pro', 'Courier New', Courier, monospace;
-  --code-font-color: #6d9cbe;
-
-  /* font colors */
-  --page-link-color: #eb9854;
-  --external-link-color: #8DBB40;
-  --page-brackets: rgba(228, 124, 67, 0.25);
-  --h1-font-color: #1189BD;
-  --h2-font-color: #1189BD;
-  --h3-font-color: #1189BD;
-  --strong: #508BB5;
-  --emphasis: #FC5963; /* CHANGED TO MASTER WHEN MERGED... SPM DID HAVE #c43835 */
-  --tag-font-color: Gold; /* #777; SPM CHANGED */
-  --tag-font-color-hover:#fff;
-  --tag-hover-bg:#e98924;
-  --sidebar-font-color: #1189BD;
-  --sidebar-font-color-hover:#e98924;
-  --sidebar-hover-bg:#1f1f1f;
-  --block-ref-bg: none;
-  /* --block-ref-border: #f8c764; */
-  --block-ref-border: #FECF2B;
-  --block-ref-hover: #e98924;
-  --block-ref-hover-bg:#111;
-  --block-ref-font-size: 1.0em;
-  --new-page-color: #8DBB40;
-  --highlight-font-color: #222;
-  --highlight-link-color: #ff6000;
-  --search-font-color: #e98924;
-
-  /* backgrounds and outlines */
-  --body-bg: #232323;
-  --left-sidebar-bg: #2b2b2b;
-  --right-sidebar-bg: #2b2b2b;
-  --h1-bg: #2f2d2a;
-  --hr: rgba(225, 117, 28, 0.50);
-  --code-bg: #2b2b2b;
-  --checkmark-color: #137cbd;
-  --pages-row-highlight: #292929;
-  --pages-header-row: #2d2d2d;
-  --reference-item-bg: #f2c98f1a;
-  --bullet: rgba(225, 117, 28); /* rgba(225, 117, 28, 0.30); SPM CHANGE [4/25] */
-  --bullet-closed: rgba(225, 117, 28, 0.70);
-  --bullet-outline: #404040;
-  --block-highlight: #00588e;
-  --current-block-highlight: rgba(255, 255, 255, 0.07);
-  --search-outline: #e9892475;
-  --search-bg: #252525;
-  --popover-bg:#333;
-  --select-bg:#444;
-  --datepicker-bg: transparent;
-  --datepicker-day-wrapper: #d9822b7a;
-
-  /* fragile styles that may break with the next update */
-  --block-embed-bg: #3f3f3f;
-  --block-embed-font-size: 0.85em;
-  /* --alias-font-color: #f8c764; */
-  --alias-font-color: #FECF2B;
-  --alias-bg: transparent;
-  --filter-bg-subtract: rgba(228, 33, 35, 0.6);
-  --filter-bg-add: rgba(141, 187, 64, 0.5);
-
-  /* Misc */
-  --kanban-board-bg: #333333;
-  --kanban-column-bg: #454545;
-  --kanban-card-bg: #555555;
-  --kanban-column-font-color: #e98924;
-  --kanban-card-font-color: #6d9cbe;
-
-  --table-border: #444;
-
-  --blockquote-font-color: rgba(109, 156, 190, 0.89);
-  --blockquote-border-color: #444;
-  --blockquote-bg: none;
-  --blockquote-cite: #777;
-
-  --encrypted-font-color:#ff6000;
-  --encrypted-bg:#353535;
-
-  --emoji-bg: #2d2d2d;
-  --emoji-border: rgba(225, 117, 28, 0.40);
-  --emoji-color: #aaa;
-
-  /* JH overrides */
-  /* --main-font: 'Calendas Plus', serif; */
-  /* --main-font-size: 1.2rem; */
-
-}
-.check-container {
-  top: -6px; /*RR change: adjust this value to move the checkbox up or down to better align with the font selected above - the default font Inter uses -6px*/
-  padding-right: 4px;
-}
-
-/*RR change: decrease the line spacing in the breadcrumbs for referenced items*/
-#right-sidebar .rm-reference-item div[style*="display: flex;"] {
-  line-height: 1.0em;
-}
-
-/* JH overrides for Calendas font*/
-/*
-.check-container {
-  top: -10px;
-}
-rm-reference-item div.rm-block-text{
-  font-size: 16px;
-}
-#right-sidebar .rm-reference-item div[style*="display: flex;"] {
-  font-size: .90em;
-}
-*/
-
-/*RR change: Un-comment the section below to maximize page width, line length, and images */
-
-/* spm using this */
-.roam-block-container {
-  max-width: 100% !important;
-}
-div.roam-center > div:first-child {
-    padding-right: calc((100% - 950px) / 2) !important;
-    padding-left: calc((100% - 1500px) / 2) !important;
-}
-.hoverparent[style^='position: relative; width: 580px;'] { /* 500px;'] { SPM CHANGE [4/25] */
-    width: 100% !important;
-}
-/* SPM COMMENTED OUT [4/25]
-.hoverparent .react-resizable[style^='width: 500px;'] {
-    width: 100% !important;
-}
-*/
-.react-resizable[style^='width: 580px;'] { /* SPM ADDED [4/25] */
-  width: 100% !important;
-}
-.hoverparent[style^="position: relative; width: 580px;"] {
-  width: 100% !important;
-}
-/* */
-
-
 @import "../fonts/Inter/inter.css";
 .loading-astrolabe {
   margin: auto;
@@ -606,14 +450,6 @@ html {
   height: 20px;
   margin: 0px 4px 4px 0px;
 }
-/*RR change: emoji button background and border color*/
-div.rm-emoji-button {
-  background-color: var(--emoji-bg) !important;
-  border: 0.5px solid var(--emoji-border) !important;
-  color: var(--emoji-color) !important;
-  font-family: var(--main-font);
-  font-size: var(--main-font-size);
-}
 .rm-emoji-block-view .rm-emoji-button .rm-emoji {
   height: 16px;
   margin: 0px 4px;
@@ -632,34 +468,25 @@ div.rm-emoji-button {
   font-weight: 600;
 }
 .kanban-board {
+  background-color: #a7b6c2;
   min-width: 100%;
   min-height: 48px;
   padding: 8px;
   overflow-x: scroll;
-  /*background-color: #a7b6c2;*/
-  background-color: var(--kanban-board-bg); /*RR change: dark background color for board*/
 }
 .kanban-column {
+  background-color: #ededed;
   margin: 0px 4px 0px 4px;
   padding: 4px;
   min-width: 200px;
-  /*background-color: #ededed;*/
-  background-color: var(--kanban-column-bg); /*RR change: column background color*/
 }
 .kanban-title {
   text-align: center;
-  color: var(--kanban-column-font-color); /*RR change: Orange column title color*/
 }
 .kanban-card {
+  background-color: white;
   margin: 8px;
   padding: 8px;
-  /*background-color: white;*/
-  background-color: var(--kanban-card-bg); /*RR change: Grey card background color*/
-  color: var(--kanban-card-font-color); /*RR change: Blue ard text color*/
-}
-div.kanban-title,
-div.kanban-card {
-  font-family: var(--main-font); /*RR change: font*/
 }
 .roam-sidebar-container .roam-sidebar-content .starred-pages-wrapper .starred-pages .rm-dnd-separator {
   position: relative;
@@ -677,7 +504,13 @@ div.kanban-card {
   width: 100%;
   height: 4px;
   border-radius: 10px;
-  /*background-color: #5c7080;*/
+  background-color: #5c7080;
+}
+.CodeMirror-activeline-background {
+  background: transparent !important;
+}
+.CodeMirror-focused .CodeMirror-activeline-background {
+  background: rgba(100, 100, 100, 0.1) !important;
 }
 html {
   font-family: 'Inter', sans-serif;
@@ -720,24 +553,16 @@ body {
   height: 100vh;
   overflow: hidden;
   position: relative;
-  background-color: var(--body-bg); /*RR change: Dark background color*/
-
 }
 .roam-body .roam-app {
   height: 100%;
   width: 100%;
   position: relative;
   -webkit-overflow-scrolling: touch;
-  /*color: #202b33;*/
-  color: var(--main-font-color); /*RR change: lighter text for dark background*/
+  color: #202b33;
 }
 .roam-body .roam-app h1 {
-  /*color: #202b33;*/
-  /*RR change: font, blue text and background highlight*/
-  color: var(--h1-font-color);
-  background-color: var(--h1-bg);
-  padding-left: 10px;
-  font-family: var(--main-font);
+  color: #202b33;
 }
 .roam-body .roam-app .roam-sidebar-container {
   position: absolute;
@@ -747,10 +572,8 @@ body {
   bottom: 45px;
   z-index: 999;
   transition: all 200ms ease-in;
-  /*background-color: #2f3437;*/
-  /*background-color: #182026;*/
-  background-color: var(--left-sidebar-bg); /*RR change: darken the sidebar*/
-
+  background-color: #2f3437;
+  background-color: #182026;
 }
 .roam-body .roam-app .roam-sidebar-container .roam-hover-sidebar-reveal {
   position: absolute;
@@ -773,24 +596,15 @@ body {
   padding: 8px 20px;
   font-weight: bold;
   cursor: pointer;
-  /*font-size: 14px;*/
-  /*color: #5c7080;*/
-  /*RR change: brighten text and font size*/
-  color: var(--sidebar-font-color);
-  font-size: 1em;
+  font-size: 14px;
+  color: #5c7080;
 }
 .roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .log-button:hover {
-  /*color: #f5f8fa;*/
-  /*background-color: #10161a;*/
-  /*RR change: orange text */
-  color: var(--sidebar-font-color-hover);
-  background-color: var(--sidebar-hover-bg);
+  color: #f5f8fa;
+  background-color: #10161a;
 }
 .roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .starred-pages-wrapper {
-  /*color: #5c7080;*/
-  /*RR change: brighten text and font size*/
-  color: var(--sidebar-font-color);
-;
+  color: #5c7080;
 }
 .roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .starred-pages-wrapper .starred-pages {
   overflow-y: auto;
@@ -799,19 +613,13 @@ body {
 .roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .starred-pages-wrapper .starred-pages .page {
   text-decoration: none;
   cursor: pointer;
-  /*font-size: 14px;*/
+  font-size: 14px;
   padding: 8px 0px 8px 4px;
-  /*color: #5c7080;*/
-  /*RR change: brighten text and font size*/
-  color: var(--sidebar-font-color);
-  font-size: var(--starred-font-size); /* 1em; SPM CHANGED */
+  color: #5c7080;
 }
 .roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .starred-pages-wrapper .starred-pages .page:hover {
-  /*color: #f5f8fa;*/
-  /*background-color: #10161a;*/
-  /*RR change: orange text */
-  color: var(--sidebar-font-color-hover);
-  background-color: var(--sidebar-hover-bg);
+  color: #f5f8fa;
+  background-color: #10161a;
 }
 .roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .starred-pages-wrapper .title {
   padding: 8px;
@@ -845,13 +653,12 @@ body {
   position: fixed;
   width: 100%;
   z-index: 101;
-  /*background-color: white;*/
+  background-color: white;
   padding-right: 16px;
   padding-left: 16px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: transparent; /*RR change: allow background to show through*/
 }
 .trunc {
   max-width: 120px;
@@ -963,7 +770,6 @@ body {
 #buffer {
   display: flex;
   flex-direction: column;
-  z-index: 10000; /*RR change: make sure the help menu popup always appears on top*/
 }
 #buffer .help-title {
   color: #f5f8fa;
@@ -989,15 +795,12 @@ body {
 .roam-table th,
 .roam-table td,
 .roam-table tr {
+  font-size: 12px;
   min-width: 100px;
   max-height: 20px;
   padding: 8px 16px;
-  margin: 0;
-  /*font-size: 12px;*/
-  /*border: 1px solid grey;*/
-  font-size: 0.9em; /*RR change: font size*/
-  border: 1px solid var(--table-border); /*RR change: darken border*/
-  font-family: var(--main-font); /*RR change: theme font*/
+  margin: 0p;
+  border: 1px solid grey;
 }
 .roam-table td {
   max-height: 20px;
@@ -1016,7 +819,7 @@ body {
   font-size: 12px;
   max-height: 20px;
   padding: 8px 16px;
-  margin: 0;
+  margin: 0p;
   border: 1px solid grey;
 }
 .import-table td {
@@ -1039,7 +842,7 @@ body {
 #info th,
 #info td {
   padding: 8px;
-  margin: 0;
+  margin: 0p;
   border: 1px solid grey;
 }
 .hoverparent:hover .hoveronly {
@@ -1055,10 +858,10 @@ body {
   font-size: 7px;
 }
 .CodeMirror {
-  font-family: var(--code-font); /*RR change: added theme font*/
+  font-family: monospace;
 }
 .CodeMirror .CodeMirror-code pre {
-  font-family: var(--code-font); /*RR change: added theme font*/
+  font-family: monospace;
   box-shadow: none;
 }
 .block-mention {
@@ -1077,53 +880,26 @@ body {
   text-decoration: underline;
 }
 .rm-page-ref-tag {
-  /*color: #a7b6c2;*/
-  color: var(--tag-font-color); /*RR change: theme color*/
-  border-radius: 10px;
-  padding: 2px 3px 2px 3px;
-  background-color: var(--tag-bg); /* SPM ADDED */
-  text-decoration: none; /* SPM ADDED */
-}
-
-/*RR change: added tag hover style*/
-.rm-page-ref-tag:hover,
-span.rm-page-ref.rm-page-ref-tag:hover {
-  color: var(--tag-font-color-hover) !important;
-  background-color: var(--tag-hover-bg);
-  text-decoration: none;
-
+  color: #a7b6c2;
 }
 .rm-page-ref-brackets {
-  /*color: #a7b6c2;*/
-  color: var(--page-brackets); /*RR change: fade back the brackets in regular text*/
+  color: #a7b6c2;
 }
 .rm-page-ref-link-color {
-  /*color: #106ba3;*/
-  color: var(--page-link-color); /*RR change: theme color*/
+  color: #106ba3;
 }
 .rm-page-ref-namespace-color {
   color: green;
 }
 .rm-block-ref {
-  padding: 4px 2px;
-  margin: -4px 0;
+  padding: 2px 2px;
+  margin: -2px 0px;
   display: inline;
+  border-bottom: 0.5px solid #d8e1e8;
   cursor: alias;
-  /*border-bottom: 1px solid #ced9e0;*/
-  /*font-size: 0.9em;*/
-  /*RR change: keep the references blocks the same size*/
-  border-bottom: 1px solid var(--block-ref-border);
-  font-size: var(--block-ref-font-size);
-  background-color: var(--block-ref-bg);
-}
-div.rm-block-ref {
-  font-family: var(--main-font);
 }
 .rm-block-ref:hover {
-  /*background-color: #f5f8fa;*/
-  /*RR change: match other hover styles*/
-  background-color: var(--block-ref-hover-bg);
-  color: var(--block-ref-hover);
+  background-color: #f5f8fa;
 }
 .check-container {
   display: inline-block;
@@ -1137,7 +913,7 @@ div.rm-block-ref {
   -ms-user-select: none;
   user-select: none;
   vertical-align: bottom;
-  /*top: -6px;*/ /*RR change: disabled so 'global setting' a the start of the file will work*/
+  top: -6px;
 }
 /* Hide the browser's default checkbox */
 .check-container input {
@@ -1155,13 +931,12 @@ div.rm-block-ref {
   height: 12px;
   border-radius: 2px;
   width: 12px;
-  /*border: 1px solid #a7b6c2;*/
-  border: 1px solid var(--checkmark-color); /*RR change: added blue border*/
+  border: 1px solid #a7b6c2;
 }
 /* On mouse-over, add a grey background color */
 /* When the checkbox is checked, add a blue background */
 .check-container input:checked ~ .checkmark {
-  background-color: var(--checkmark-color);
+  background-color: #137cbd;
   border: none;
 }
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -1212,12 +987,11 @@ div.rm-block-ref {
   font-weight: bold;
 }
 .rm-find-or-create-wrapper .rm-menu-item .rm-search-title .rm-new-page {
-  /*color: #0d8050;*/
-  color: var(--new-page-color); /*RR change: theme color*/
+  color: #0d8050;
 }
 .rm-find-or-create-wrapper .rm-menu-item .rm-search-list-item {
   word-break: break-word;
-  color: #8a9ba8; /*red RR change: this is the search results body text color*/
+  color: #8a9ba8;
   overflow-wrap: break-spaces;
   margin-left: -20px;
 }
@@ -1230,23 +1004,13 @@ div.rm-block-ref {
   font-weight: bold;
 }
 .rm-pages-row-highlight {
-  /*background-color: #f5f8fa;*/
-  background-color: var(--pages-row-highlight); /*RR change: dark alternating row color*/
+  background-color: #f5f8fa;
 }
 .rm-pages-row {
   display: flex;
   flex: 0 0 auto;
   justify-content: space-between;
   align-items: flex-start;
-}
-.rm-pages-row:first-child { /*RR change: Table Header*/
-  background-color: var(--pages-header-row) !important;
-}
-.rm-pages-row .rm-pages-title-col a strong { /*RR change: Page Title*/
-  color: var(--page-link-color) !important;
-}
-.rm-pages-row .rm-pages-title-col a strong:hover { /*RR change: Page Title*/
-  text-decoration: underline;
 }
 .rm-pages-row .rm-pages-sort-header {
   display: flex;
@@ -1277,31 +1041,13 @@ div.rm-block-ref {
   margin-right: 8px;
   flex: 1 1 100%;
   word-break: break-word;
+  background-color: #f5f8fa;
   padding-right: 8px;
-  /*background-color: #f5f8fa;*/
-  /*RR change: background color and spacing*/
-  background-color: var(--reference-item-bg);
-  border-radius: 7px;
-  padding: 10px;
 }
-
-/*RR change: reference item page link font*/
-.rm-reference-item div {
-  font-family: var(--main-font);
-}
-
-/*RR change: reference font*/
-div.rm-reference-container {
-  font-family: var(--main-font);
-  margin-bottom: 2em; /*RR change: give a little breathing room for the unreferenced links section*/
-}
-
-.rm-level1 div.rm-block-text {
+.rm-level1 {
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
-  font-size: 1.2em;
-  /* font-size: var(--main-font-size); RR change: font size reduction */
-  /*font-family: 'Inter', sans-serif;*/
-  font-family: var(--main-font); /*RR change: font change*/
+  font-size: 1.8em;
 }
 .rm-level1 textarea {
   line-height: 1.2;
@@ -1309,17 +1055,15 @@ div.rm-reference-container {
 .rm-level1 .roam-block {
   line-height: 1.2;
 }
-.rm-level2 div.rm-block-text{
-  /*font-family: 'Inter', sans-serif !important;*/
+.rm-level2 {
+  font-family: 'Inter', sans-serif !important;
   font-weight: 400;
   font-size: 1.4em;
-  font-family: var(--main-font);
 }
 .rm-level3 {
   font-weight: 500;
   font-size: 1.2em;
   color: #5c7080;
-  font-family: var(--main-font);
 }
 .rm-title1 {
   word-break: break-word;
@@ -1395,13 +1139,9 @@ div.rm-reference-container {
   padding: 2px;
 }
 .roam-highlight {
+  background-color: #fef09f;
   margin: -2px;
   padding: 2px;
-  background-color: #fef09f;
-  color: var(--highlight-font-color); /*RR change: invert the highlighted text color*/
-}
-.roam-highlight .rm-page-ref-link-color {
-  color: var(--highlight-link-color);
 }
 .rm-line {
   width: 100%;
@@ -1412,10 +1152,10 @@ div.rm-reference-container {
 }
 .rm-encrypted-block {
   font-weight: 300;
-  color: var(--encrypted-font-color);
+  color: #8a9ba8;
   font-size: 12px;
   border-radius: 4px;
-  background-color: var(--encrypted-bg);
+  background-color: #f5f8fa;
   padding: 2px 4px;
   display: inline;
 }
@@ -1430,16 +1170,13 @@ div.rm-reference-container {
   grid-template-rows: 1fr 1fr 1fr;
 }
 .roam-bullet-closed {
-  /*background-color: #ced9e0;*/
-  background-color: var(--bullet-closed); /*RR change: orange color to match open bullets*/
+  background-color: #ced9e0;
 }
 #right-sidebar .roam-bullet-closed {
-  /*background-color: #a7b6c2;*/
-  background-color: var(--bullet-closed); /*RR change: orange color to match open bullets*/
-
+  background-color: #a7b6c2;
 }
 .rm-icon {
-  color: #ced9e0;
+  font-color: #ced9e0;
 }
 #mobile-capture {
   padding: 24px;
@@ -1507,6 +1244,27 @@ div.rm-reference-container {
   margin-top: 20px;
   width: 70%;
 }
+.rm-saving-icon {
+  height: 24px;
+  width: 24px;
+  align-items: center;
+  justify-content: center;
+}
+.rm-saving-icon .rm-saving-inner-icon {
+  border-radius: 50%;
+  opacity: 0.7;
+  width: 10px;
+  height: 10px;
+}
+.rm-saving-icon .rm-saving-local {
+  background-color: #99280f;
+}
+.rm-saving-icon .rm-saving-remote {
+  background-color: #d9822b;
+}
+.rm-saving-icon .rm-synced {
+  background-color: #0f9960;
+}
 .level1 {
   font-family: Roboto, sans-serif;
   font-weight: 200;
@@ -1536,35 +1294,11 @@ div.rm-reference-container {
   font-weight: 400;
   font-size: 1.4em;
 }
-
 .rm-pm-editor h3 {
   font-weight: 500;
   font-size: 1.2em;
   color: #5c7080;
 }
-
-/*RR change: Header styles*/
-.roam-app h1 {
-  color: var(--h1-font-color);
-  background-color: var(--h1-bg);
-  padding-left: 10px;
-  margin-top: -4px !important;
-}
-.roam-app h2 {
-  color: var(--h2-font-color);
-  background-color: var(--h1-bg);
-  padding-left: 10px;
-  margin-top: -5px !important;
-}
-.roam-app h3 {
-  font-weight: bold;
-  color: var(--h3-font-color);
-  background-color: var(--h1-bg);
-  padding-left: 10px;
-  margin-top: -3px !important;
-}
-
-
 .rm-pm-editor img {
   max-width: 100%;
 }
@@ -1609,8 +1343,7 @@ div.rm-reference-container {
   background-color: #ced9e0;
 }
 .block-highlight-blue {
-  /*background-color: #7cccff;*/
-  background-color: var(--block-highlight); /*RR change: Darker Blue for readability*/
+  background-color: #7cccff;
 }
 .block-highlight-yellow {
   background-color: yellow;
@@ -1620,8 +1353,7 @@ div.rm-reference-container {
   margin-left: 5px;
 }
 .block-border-left {
-  /*border-left: 1px solid #bfccd6;*/
-  border-left: 1px solid var(--bullet-outline); /*RR change: lighter bullet tree outline*/
+  border-left: 1px solid #bfccd6;
 }
 .text-align-left {
   text-align: left;
@@ -1648,22 +1380,11 @@ div.rm-reference-container {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-/*RR change: theme font catch-all*/
-div.roam-block {
-  font-family: var(--main-font);
-  font-size: var(--main-font-size);
-}
 .roam-block .span-view {
   box-sizing: border-box;
 }
 .rm-block-text {
-  /*max-width: 520px;*/
-  max-width: 100%; /*RR change: make references as wide as possible*/
-}
-/*RR change: Theme body font settings*/
-div.rm-block-text {
-  font-family: var(--main-font);
-  font-size: var(--main-font-size);
+  max-width: 520px;
 }
 .rm-block-input {
   line-height: 1.5em;
@@ -1678,13 +1399,6 @@ div.rm-block-text {
   letter-spacing: inherit;
   border: none;
   resize: none;
-  /*RR change: added a highlight color*/
-  /*color: #bbb;*/
-  background-color: var(--current-block-highlight);
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-left: -5px;
-  margin-right: -5px;
 }
 .controls {
   display: flex;
@@ -1730,8 +1444,7 @@ div.rm-block-text {
   border-radius: 50%;
   width: 5px;
   height: 5px;
-  /*background-color: #394b59;*/
-  background-color: var(--bullet); /*RR change: dark orange bullet*/
+  background-color: #394b59;
 }
 .version-bullet {
   background-color: #a7b6c2;
@@ -1774,7 +1487,7 @@ div.rm-block-text {
   width: 96%;
   height: 4px;
   border-radius: 10px;
-  background-color: yellow; /* #5c7080; SPM CHANGED */
+  background-color: #5c7080;
 }
 .rm-database {
   background-color: #182026;
@@ -1798,7 +1511,9 @@ div.rm-block-text {
   background-color: #bfccd6;
 }
 .block-ref-count-button {
-  font-size: 0.9em;
+  font-size: 0.8em;
+  opacity: 0.5;
+  cursor: pointer;
 }
 .rm-grey-text {
   color: #8a9ba8;
@@ -1834,11 +1549,11 @@ div.rm-block-text {
   text-align: left;
   text-shadow: none;
 }
-/* .tags-input:focus { */
+.tags-input:focus {
   /* box-shadow: 0 0 5px rgba(81, 203, 238, 1); */
   /* border: 2px solid white; */
   /* border-bottom-color: #448cca; */
-/* } */
+}
 .tags-output {
   display: inline-block;
   margin-left: 4px;
@@ -1876,15 +1591,11 @@ div {
   padding: 0px;
 }
 textarea {
-  font-family: var(--main-font);
-  font-size: var(--main-font-size);
+  font-family: 'Inter', sans-serif;
+  font-size: 1em;
   line-height: 1.5em;
   margin: 0px;
   padding: 0px;
-}
-/*RR change: slight reduction in size for the textarea*/
-#right-sidebar .rm-reference-item textarea {
-font-size: 1.0em;
 }
 .xtra {
   transform: scale(3);
@@ -1901,6 +1612,9 @@ font-size: 1.0em;
 .display-inline-flex {
   display: -webkit-inline-flex;
   display: inline-flex;
+}
+.flex {
+  flex: 1;
 }
 .react-resizable {
   position: relative;
@@ -1936,364 +1650,3 @@ font-size: 1.0em;
   user-select: none;
   /* Non-prefixed version, currently */
 }
-
-/*RR change: Icon color*/
-
-.bp3-icon-graph:before,
-.bp3-icon-star:before,
-.bp3-icon-star-empty:before,
-.bp3-icon-more:before,
-.bp3-icon-menu:before,
-.bp3-button:before,
-.bp3-minimal:before,
-.bp3-small:before,
-.bp3-icon-filter {
-  color: #e78924 !important;
-}
-
-.bp3-button.bp3-minimal {
-  color:#777;
-}
-
-.bp3-button:not([class*="bp3-intent-"]) {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  background-color: transparent;
-  background-image: none;
-  color: #999;
-}
-.bp3-button:not([class*="bp3-intent-"]):hover {
-  background-color: rgba(167,182,194,0.3);
-}
-
-.bp3-button.bp3-small:not([class*="bp3-minimal"]) {
-  background-color: #191919;
-  color: #777;
-}
-.bp3-button.bp3-small:not([class*="bp3-minimal"]):hover {
-  background-color: rgba(167,182,194,0.3);
-}
-
-/*bp3-button bp3-minimal bp3-small bp3-icon-standard bp3-icon-menu-open
-bp3-button bp3-minimal bp3-icon-star bp3-small
-bp3-button bp3-small block-ref-count-button*/
-
-/*RR change: override ellipsis text and word wrap instead*/
-/*.bp3-text-overflow-ellipsis {
-    text-overflow: unset;
-    white-space: unset;
-}*/
-
-
-/*RR change: Roam Search Bar*/
-
-/* Roam Search Box Placeholder Text Color */
-.bp3-input::placeholder,
-.bp3-input-group > .bp3-icon {
-    color: var(--search-font-color);
-}
-
-/* Input Text Color */
-.bp3-input {
-  color: var(--search-font-color);
-}
-
-/* Roam Search Box Field and Border */
-.bp3-input,
-.bp3-input[readonly]{
-  background: var(--search-bg);
-  box-shadow: inset 0 0 0 1px var(--search-outline);
-  font-size: 0.85em;
-}
-
-/*RR change: additional text styles*/
-.roam-app strong {
-  color: var(--strong) !important;
-}
-
-.roam-app em {
-  color: var(--emphasis);
-  /*color: #ff8880;*/
-}
-
-/*RR change: Markdown Links */
-
-.roam-app a {
-  color: var(--external-link-color);
-}
-
-.roam-app a:focus,
-.roam-app a:hover {
-  color: var(--external-link-color);
-  text-decoration: underline;
-}
-
-hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border: 0;
-  border-top: 1px solid var(--hr);
-}
-
-/*RR change: Sidebar modifications*/
-#right-sidebar {
-  background-color: var(--right-sidebar-bg) !important;
-}
-
-#all-pages-search div {
-  font-family: var(--main-font);
-}
-
-/* Context Menus */
-.bp3-popover .bp3-popover-content,
-.bp3-menu {
-  background: var(--popover-bg);
-  color: var(--search-font-color);
-  border-radius: 4px;
-}
-
-.bp3-popover .bp3-popover-arrow-fill {
-    fill: var(--popover-bg);
-}
-
-.bp3-datepicker {
-  background-color: var(--datepicker-bg);
-}
-
-.bp3-datepicker .DayPicker-Day.DayPicker-Day--isToday .bp3-datepicker-day-wrapper {
-    border: 1px solid var(--datepicker-day-wrapper);
-}
-
-.bp3-html-select.bp3-minimal select {
-  color: var(--search-font-color);
-  background-color: var(--select-bg);
-}
-
-/* Slash [/] and page-ref-search inline Popup - SPM COMMENT EDIT*/
-div.bp3-elevation-3 {
-  color: #1775db;
-  background-color: white !important; /* #333 !important; SPM CHANGED */
-  font-size: 1em; /* 0.85em; SPM CHANGED */
-  border-radius: 4px;
-  box-shadow: 0 0 0 2px #222,
-              0 2px 15px #222;
-  font-weight: bold; /* SPM ADDED */
-}
-[title~=Search] {
-  color: #1775db !important; /*RR change: Bi-directional place holder text*/
-  color: var(--search-font-color) !important; /*RR change: Bi-directional place holder text*/
-}
-.bp3-elevation-3 .dont-unfocus-block[style*="background-color: rgb(213, 218, 223);"],
-.bp3-popover-content .rm-menu-item[style*="background-color: rgb(213, 218, 223);"]  {
-  background-color: #4c4c4c !important;
-/*filter: invert(100%); /*RR change: Inverts the colors of the / and link search menus*/
-
-}
-
-/*RR change: generic class for a transparent background*/
-.trans {
-  background-color: transparent;
-}
-
-.clock {
-  margin-bottom: 2em;
-}
-
-/*RR change: Breadcrumb navigation background color override*/
-.parent-path-wrapper div div {
-  background-color: transparent !important;
-}
-
-blockquote {
-  font-size: 1em;
-  border-left: 5px solid var(--blockquote-border-color);
-  box-sizing: border-box;
-  color: var(--blockquote-font-color);
-  margin: 0px 0px 20px;
-  min-height: 0px;
-  min-width: 0px;
-  padding: 10px 20px;
-  background-color: var(--blockquote-bg);
-  text-align: justify;
-  text-justify: inter-word;
-}
-
-blockquote .small, blockquote footer, blockquote small {
-    display: block;
-    font-size: 80%;
-    line-height: 1.42857143;
-    color: var(--blockquote-cite);
-}
-
-select {
-  background-color: #444 !important;
-  border-color: #777;
-}
-
-/*RR change: This section contains a series of very specific overrides that are extremely fragile and will probably break with any minor update*/
-
-/*RR change: Super fragile override for Block embeds to change the background color and font-size*/
-
-div[style^='overflow: hidden; margin-left: -8px; background-color: rgb(235, 241, 245); margin-top: -4px;']{
-  background-color: var(--block-embed-bg) !important;
-  font-size: var(--block-embed-font-size);
-}
-
-/*RR change: Very fragile override for alias styes, will probably break*/
-span[style^='background-color: rgb(235, 241, 245); border-radius: 4px; cursor: alias; color: rgb(245, 86, 86); padding: 4px 6px;'] {
-  background-color: var(--alias-bg) !important;
-  border-radius: 0 !important;
-  cursor: alias;
-  color: var(--alias-font-color) !important;
-  padding: 0 !important;
-}
-
-/*RR change: Very fragile override for the filter icon backgroung when a filter is applied*/
-span[style^='background-color: red;'] {
-  background-color: var(--filter-bg-subtract) !important;
-}
-span[style^='background-color: green;'] {
-  background-color: var(--filter-bg-add) !important;
-}
-
-/*RR change: Codemirror adjustments*/
-
-/* RR Change: single backtick code snippets */
-code {
-    background-color: var(--code-bg);
-    border-radius: 5px; /* 3px; SPM CHANGED */
-    color: var(--code-font-color);
-    border: 0px solid #13191e;
-    padding: 3px 4px 3px 4px;
-    font-family: var(--code-font);
-}
-
-
-/*
-
-    Name:       Railscasts
-    Author:     Ryan Bates (http://railscasts.com)
-
-    CodeMirror template by Jan T. Sott (https://github.com/idleberg/base16-codemirror)
-    Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16)
-
-*/
-
-div.CodeMirror .CodeMirror-code pre {
-  font-family: var(--code-font);
-  line-height: 1.4em; /*1.2em; SPM CHANGED*/
-  font-size: 1.2em; /*0.9em; SPM CHANGED*/
-}
-
-/*<!--activeline-->*/
-.CodeMirror-activeline-background { background: #253540; }
-
-.CodeMirror {background: var(--code-bg); color: #f4f1ed; font-size: 0.85em;}
-div.CodeMirror-selected {background: lemonchiffon !important; /*#272935; SPM CHANGED*/}
-.CodeMirror-gutters {background: #2b2b2b; border-right: 1px solid #333;}
-.CodeMirror-linenumber {color: #eb9854; /*#5a647e; SPM CHANGED*/}
-.CodeMirror-cursor {border-left: 1px solid Black !important; /*1px solid #d4cfc9 !important; SPM CHANGED*/}
-
-span.cm-comment {color: #bc9458;}
-span.cm-atom {color: #b6b3eb;}
-span.cm-number {color: #b6b3eb;}
-.cm-s-default .cm-number {color: #b6b3eb;}
-
-span.cm-property,  span.cm-attribute {color: #a5c261;}
-span.cm-keyword {color: #da4939;}
-.cm-s-default .cm-keyword {color: #da4939;}
-span.cm-string {color: #ffc66d;}
-.cm-s-default .cm-string {color: #ffc66d;}
-
-span.cm-variable-2 {color: #a5c261;}
-span.cm-variable {color: #6d9cbe;}
-span.cm-def {color: #cc7833;}
-span.cm-error {/*background: #da4939;*/ color: #da4939;}
-span.cm-bracket {color: #f4f1ed;}
-span.cm-tag {color: #da4939;}
-span.cm-link {color: #b6b3eb;}
-
-.cm-s-default .cm-atom { color: #2983bb;}
-
-.CodeMirror-matchingbracket { text-decoration: none; color: Red !important; background-color: yellow; /*text-decoration: underline; color: white !important; SPM CHANGED*/}
-.CodeMirror-activeline-background { background: #e8f2ff; /*#303040; SPM CHANGED*/}
-
-.CodeMirror-lines {background: #fff; /*.CodeMirror pre {background: #2b2b2b; SPM CHANGED*/}
-.CodeMirror-activeline pre {background: #e8f2ff; /* SPM ADDED */}
-
-
-.CodeMirror-lines {background: #2b2b2b;}
-.CodeMirror-activeline pre {background: #253540; /* SPM ADDED */}
-
-/* SPM copied from roam-orig css on 5-4-20 */
-
-.rm-saving-icon {
-  height: 24px;
-  width: 24px;
-  align-items: center;
-  justify-content: center;
-}
-.rm-saving-icon .rm-saving-inner-icon {
-  border-radius: 50%;
-  opacity: 1; /* 0.7; SPM CHANGED */
-  width: 10px;
-  height: 10px;
-}
-.rm-saving-icon .rm-saving-local {
-  background-color: #99280f;
-}
-.rm-saving-icon .rm-saving-remote {
-  background-color: white; /* #d9822b; SPM CHANGED */
-}
-.rm-saving-icon .rm-synced {
-  background-color: #0f9960;
-}
-
-/* END of SPM */
-
-/*RR change: incorporating a great idea from @Devon to hide the tool bar when not in use.
-source: https://gist.github.com/devonzuegel/f54de76cbf0c0355d93e721c89f45787;
- */
-
-/* #roam-right-sidebar-content > div {
-  border-bottom: none !important;
-}
-.check-container {
-  padding-right: 4px;
-}
-.roam-body-main {
-  height: 100% !important;
-  top: 0 !important;
-}
-.roam-topbar {
-  opacity: 0;
-  transition: opacity 200ms;
-  z-index: 1;
-  background: none;
-  width: calc(100% - 40px);
-  padding: 0;
-}
-.roam-topbar:hover, .roam-topbar:focus-within {
-  opacity: 1;
-  transition: opacity 200ms;
-}
-#right-sidebar button {
-  z-index: 100;
-} */
-
-/* SPM ADDED FORMATTING */
-/* Commenting this out on 4/23 due to update/fix on how they show synching status (circle instead of checkmark)
-.bp3-icon-standard.bp3-icon-tick  {
-    color: white !important;
-}
-*/
-
-div.rm-reference-item > div > div > div > span {
-  color: var(--reference-item-parent-color);
-}
-
-div.rm-reference-item > div > div > div > span.bp3-icon-chevron-right {
-  color: var(--reference-item-parent-sep-color);
-}
-
-/* END OF SPM ADDED FORMATTING */
