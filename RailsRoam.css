@@ -2269,4 +2269,14 @@ div.rm-reference-item > div > div > div > span {
 div.rm-reference-item > div > div > div > span.bp3-icon-chevron-right {
   color: var(--reference-item-parent-sep-color);
 }
+
+/* 5-4-20 */
+.rm-saving-icon .rm-saving-local {
+  background-color: red;
+}
+
+.rm-saving-icon .rm-saving-remote {
+  background-color: white; /* default was orange */
+}
+
 /* END OF SPM ADDED FORMATTING */
