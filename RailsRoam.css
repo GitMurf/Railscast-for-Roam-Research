@@ -1,8 +1,8 @@
 /*
 ### ROAM Railscast THEME ###
-> Many thanks to the Roam Slack community for all the resources, particularly @Anthony, @Calhistoriaan and @Devon.
+> Many thanks to the Roam Slack community for all the resources, particularly @Anthony, @Calhistoriaan, @Devon, @Murf, @Malcolm Ocean, and @David Cranall.
 > Edits by Jeff Harris
-> v1.0.13
+> v1.0.19
 */
 
 /* RR change: added variables to easily change the theme */
@@ -12,6 +12,10 @@
   --reference-item-parent-color: #508BB5;
   --reference-item-parent-sep-color: gainsboro;
   /* END OF SPM Added Variables */
+  /* Roam default variables ADDED FROM JEFF MERGE*/
+  --primary-color: #137cbd;
+  --s1: 8px;
+  --background-color: #e1e8ed;
   /* Primary fonts */
   --main-font: 'Inter', sans-serif;
   /* --main-font: 'Calendas Plus', serif; */
@@ -19,10 +23,13 @@
   --main-font-size: 1.0em;
   --code-font: 'Source Code Pro', 'Courier New', Courier, monospace;
   --code-font-color: #6d9cbe;
+  --code-font-size: 1.0em;
 
   /* font colors */
   --page-link-color: #eb9854;
+  --daily-notes-link-color:#eb9854;
   --external-link-color: #8DBB40;
+  --sidebar-link-color: #8DBB40;
   --page-brackets: rgba(228, 124, 67, 0.25);
   --h1-font-color: #1189BD;
   --h2-font-color: #1189BD;
@@ -36,23 +43,37 @@
   --sidebar-font-color-hover:#e98924;
   --sidebar-hover-bg:#1f1f1f;
   --block-ref-bg: none;
-  /* --block-ref-border: #f8c764; */
-  --block-ref-border: #FECF2B;
-  --block-ref-hover: #e98924;
+  --block-ref-border: rgba(254, 207, 43, .6);
+  --block-ref-hover: #eb9854;
   --block-ref-hover-bg:#111;
   --block-ref-font-size: 1.0em;
-  --new-page-color: #8DBB40;
   --highlight-font-color: #222;
+  --highlight-background-color: #fef09f;
   --highlight-link-color: #ff6000;
-  --search-font-color: #e98924;
+  --search-font-color: #af671c; /* CHANGED TO MASTER WHEN MERGED... SPM DID HAVE #e98924 */
+  --search-body-font-color: #8a9ba8;
+  --new-page-color: #8DBB40;
+  --popover-font-color: #e98924;
+  --ref-count-font-size: 12px;
+  --breadcrumb-color: #5c7080;
+  --breadcrumb-font-size: 13px;
+  --breadcrumb-line-height: 0.85em;
+
+  /* Saving icon colors */
+  --saving-local: #99280f;
+  --saving-remote: #d9822b;
+  --synched: #0f9960;
 
   /* backgrounds and outlines */
   --body-bg: #232323;
   --left-sidebar-bg: #2b2b2b;
   --right-sidebar-bg: #2b2b2b;
-  --h1-bg: #2f2d2a;
+  --icon-color: #e78924;
+  --icon-bg-hover: rgba(167,182,194,0.3);
+  --icon-color-hover: #e78924;
+  /* --h1-bg: #1189BD1a; */
   --hr: rgba(225, 117, 28, 0.50);
-  --code-bg: #2b2b2b;
+  --code-bg: #333;
   --checkmark-color: #137cbd;
   --pages-row-highlight: #292929;
   --pages-header-row: #2d2d2d;
@@ -60,10 +81,14 @@
   --bullet: rgba(225, 117, 28); /* rgba(225, 117, 28, 0.30); SPM CHANGE [4/25] */
   --bullet-closed: rgba(225, 117, 28, 0.70);
   --bullet-outline: #404040;
+  --bullet-position: 4px;
   --block-highlight: #00588e;
-  --current-block-highlight: rgba(255, 255, 255, 0.07);
+  --block-highlight-bg: rgba(0, 0, 0, 0.4);
+  --current-block-highlight: rgba(255, 255, 255, 0.05);
   --search-outline: #e9892475;
   --search-bg: #252525;
+  --search-selected-row: #4c4c4c;
+  --inline-search-bg: white; /* #333 !important; SPM CHANGED */
   --popover-bg:#333;
   --select-bg:#444;
   --datepicker-bg: transparent;
@@ -72,11 +97,11 @@
   /* fragile styles that may break with the next update */
   --block-embed-bg: #3f3f3f;
   --block-embed-font-size: 0.85em;
-  /* --alias-font-color: #f8c764; */
   --alias-font-color: #FECF2B;
   --alias-bg: transparent;
-  --filter-bg-subtract: rgba(228, 33, 35, 0.6);
-  --filter-bg-add: rgba(141, 187, 64, 0.5);
+  /*RR change: no longer needed? Already broken?*/
+  /* --filter-bg-subtract: rgba(228, 33, 35, 0.6);
+  --filter-bg-add: rgba(141, 187, 64, 0.5); */
 
   /* Misc */
   --kanban-board-bg: #333333;
@@ -99,35 +124,83 @@
   --emoji-border: rgba(225, 117, 28, 0.40);
   --emoji-color: #aaa;
 
+  --no-query-results: "Query returned no results";
+  --no-query-results-color: #FC5963;
+  --query-results-border: #f2c98f1a;
+
+  /* Scrollbar settings - to disable set values to none */
+  --scrollbar-track: #2b2b2b;
+  --scrollbar-thumb: rgba(153, 153, 153, 0.1);
+
   /* JH overrides */
-  /* --main-font: 'Calendas Plus', serif; */
-  /* --main-font-size: 1.2rem; */
+  /* --main-font: 'Calendas Plus', serif;
+  --main-font-size: 1.2em;
+  --code-font-size: 0.9em;
+  */
 
 }
+
+/* ----------------------------------------- */
+
+/*RR change: CHECKBOX ALGINMENT - adjust the 'top' value to move the checkbox up or down to better align with the font selected above - the default font Inter uses -6px*/
 .check-container {
-  top: -6px; /*RR change: adjust this value to move the checkbox up or down to better align with the font selected above - the default font Inter uses -6px*/
+  top: -6px;
   padding-right: 4px;
 }
 
-/*RR change: decrease the line spacing in the breadcrumbs for referenced items*/
-#right-sidebar .rm-reference-item div[style*="display: flex;"] {
-  line-height: 1.0em;
-}
+/* ----------------------------------------- */
 
 /* JH overrides for Calendas font*/
 /*
 .check-container {
   top: -10px;
 }
-rm-reference-item div.rm-block-text{
+.rm-reference-item div.rm-block-text{
   font-size: 16px;
 }
 #right-sidebar .rm-reference-item div[style*="display: flex;"] {
-  font-size: .90em;
+
+}
+
+.roam-block div[style*="background-color: rgb(235, 241, 245);" ],
+.roam-block div[style*="background-color: rgb(235, 241, 245);" ] div {
+  font-size: 0.8em;
+  font-size: 16px;
+}
+.rm-reference-item textarea {
+  font-size: 16px;
 }
 */
 
-/*RR change: Un-comment the section below to maximize page width, line length, and images */
+/* ----------------------------------------- */
+
+/*RR change: SIDEBAR WIDTH - Comment/un-comment this section to toggle between a 50/50 layout between the main section and the sidebar.
+inspried by David Cranall https://davidcrandallwrites.com/split-screen-and-rtl-custom-css-scripts-for-roam/*/
+
+.roam-center {
+  flex-basis: 50% !important;
+}
+
+/* ----------------------------------------- */
+
+/* RR change: SEARCHBAR - Comment/un-comment this section to make the search bar full width */
+
+.rm-find-or-create-wrapper {
+  flex: 0 1 100% !important;
+}
+
+/* ----------------------------------------- */
+
+/*RR change: SEARCH RESULTS WRAPPING - Wraps text when performing an inline search with [[]] or (())*/
+
+/* .bp3-text-overflow-ellipsis {
+    text-overflow: unset;
+    white-space: unset;
+} */
+
+/* ----------------------------------------- */
+
+/*RR change: PAGE WIDTH - Un-comment the section below to maximize page width, line length, and images widths */
 
 /* spm using this */
 .roam-block-container {
@@ -148,13 +221,167 @@ div.roam-center > div:first-child {
 .react-resizable[style^='width: 580px;'] { /* SPM ADDED [4/25] */
   width: 100% !important;
 }
-.hoverparent[style^="position: relative; width: 580px;"] {
+.hoverparent[style^="position: relative; width: 580px;"],
+.hoverparent[style^="position: relative; width: 720px;"] {
   width: 100% !important;
 }
 /* */
 
+/* ----------------------------------------- */
 
-@import "../fonts/Inter/inter.css";
+/*RR change: SEARCH/TOOLBAR - Uncomment the following section to hide the tool bar when not in use. A great idea from @Devon. Source: https://gist.github.com/devonzuegel/f54de76cbf0c0355d93e721c89f45787;
+ */
+
+/*
+#roam-right-sidebar-content > div {
+  border-bottom: none !important;
+}
+.check-container {
+  padding-right: 4px;
+}
+.roam-body-main {
+  height: 100% !important;
+  top: 0 !important;
+}
+.roam-topbar {
+  opacity: 0;
+  transition: opacity 200ms;
+  z-index: 1;
+  background: none;
+  width: calc(100% - 40px);
+  padding: 0;
+}
+.roam-topbar:hover, .roam-topbar:focus-within {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+#right-sidebar button {
+  z-index: 100;
+}
+*/
+
+/* ----------------------------------------- */
+
+/*RR change: SCROLLBARS - Comment/un-comment this section to toggle scrollbars on or off
+inspired by @Malcolm Ocean*/
+
+div::-webkit-scrollbar {
+  width: 10px;
+}
+div::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track) !important;
+}
+div::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb) !important;
+}
+
+/* ----------------------------------------- */
+
+/*RR change: BREADCRUMBS - */
+/* .rm-reference-item div[style*="display: flex; flex-wrap: wrap; margin-left: 4px;"] {
+    line-height: var(--breadcrumb-line-height);
+    font-size: var(--breadcrumb-font-size);
+    color: var(--breadcrumb-color) !important;  */
+    /*RR change: Added variable for the breadcrumb navigation in reference blocks*/
+
+/*RR change: decrease the line spacing in the breadcrumbs for referenced items*/
+.zoom-mentions-view span {
+padding-top: 0 !important;
+padding-bottom: 0 !important;
+}
+
+/* RR change: Comment/un-comment to remove checkboxes in breadcrumb navigation */
+
+.roam-reference-item > div:first-child:not(.roam-log-container) > div:first-child label.check-container,
+.roam-article > div:first-child:not(.roam-log-container) > div:first-child label.check-container {
+  display: none;
+}
+
+/* ----------------------------------------- */
+
+/* ----------------------------------------- */
+/* RR change: QUERIES - Query results options */
+
+/* Show empty query message */
+.rm-block-text .rm-reference-main .rm-mentions:empty:after {
+  content: var(--no-query-results);
+  color: var(--no-query-results-color);
+  font-family: var(--main-font);
+  padding: var(--s1);
+}
+.rm-query {
+  /* border: 0.5px solid #38332e; */
+  padding-bottom: var(--s1);
+  /* border-top-left-radius: 7px;
+  border-top-right-radius: 7px; */
+  border-radius: 7px;
+  border: 0.75px solid var(--query-results-border);
+}
+.rm-query .rm-query-title {
+  /* color: #508bb5; */
+  /* background-color: #38332e; */
+  padding: var(--s1);
+  font-size: .8em;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  background-color: var(--reference-item-bg);
+  color: var(--breadcrumb-color);
+}
+
+/*RR change: HIDE QUERY SCRIPT - Comment/uncomment to hide the original query and revert back to legacy behavior */
+
+/*
+.rm-query .rm-query-title {
+  display: none;
+}
+ */
+
+/* RR change: MINIMIZE QUERIES: add any one of the following tags before the beginning of your query (in the same block):
+
+  #min-title = hides the page reference link / page title
+  #min-con = hides the contextual reference infromation (breadcrumbs)
+  #minimal = hides both the title and the context
+  #min-q = hides the query string, similar to legacy behavior
+  #min-all = hides everything — title, context, and query string
+
+inspired by Matt Goldenberg */
+
+[data-tag="minimal"],
+[data-tag="minimal"] + .rm-query .rm-title-arrow-wrapper,
+[data-tag="minimal"] + .rm-query .zoom-mentions-view {
+  display:none!important; /* hide page reference (title) and mention context (breadcrumbs) */
+}
+[data-tag="min-title"], [data-tag="min-title"] + .rm-query .rm-title-arrow-wrapper {
+display:none!important; /* hide page reference (title) */
+}
+[data-tag="min-con"], [data-tag="min-con"] + .rm-query .zoom-mentions-view {
+  display:none !important;  /* hide mention context (breadcrumbs) */
+}
+[data-tag="min-q"],
+[data-tag="min-q"] + .rm-query .rm-query-title {
+  display:none !important;  /* hide the query string */
+}
+[data-tag="min-all"],
+[data-tag="min-all"] + .rm-query .zoom-mentions-view,
+[data-tag="min-all"] + .rm-query .rm-title-arrow-wrapper,
+[data-tag="min-all"] + .rm-query .rm-query-title {
+  display:none !important;  /* hide everything */
+}
+[data-tag="minimal"] + .rm-query .rm-query-title::after,
+[data-tag="min-title"] + .rm-query .rm-query-title::after,
+[data-tag="min-con"] + .rm-query .rm-query-title::after{
+  content: " #minimal" /* add a tag to the query string to indicate this query has been minimized */
+}
+
+/* ----------------------------------------- */
+
+
+/* ----------------------------------------- */
+/* Start of standard Roam Styles */
+/* ----------------------------------------- */
+
+
+/*@import "../fonts/Inter/inter.css";*/
 .loading-astrolabe {
   margin: auto;
   position: relative;
@@ -632,18 +859,18 @@ div.rm-emoji-button {
   font-weight: 600;
 }
 .kanban-board {
+  /*background-color: #a7b6c2;*/
   min-width: 100%;
   min-height: 48px;
   padding: 8px;
   overflow-x: scroll;
-  /*background-color: #a7b6c2;*/
   background-color: var(--kanban-board-bg); /*RR change: dark background color for board*/
 }
 .kanban-column {
+  /*background-color: #ededed;*/
   margin: 0px 4px 0px 4px;
   padding: 4px;
   min-width: 200px;
-  /*background-color: #ededed;*/
   background-color: var(--kanban-column-bg); /*RR change: column background color*/
 }
 .kanban-title {
@@ -651,9 +878,9 @@ div.rm-emoji-button {
   color: var(--kanban-column-font-color); /*RR change: Orange column title color*/
 }
 .kanban-card {
+  /*background-color: white;*/
   margin: 8px;
   padding: 8px;
-  /*background-color: white;*/
   background-color: var(--kanban-card-bg); /*RR change: Grey card background color*/
   color: var(--kanban-card-font-color); /*RR change: Blue ard text color*/
 }
@@ -679,6 +906,25 @@ div.kanban-card {
   border-radius: 10px;
   /*background-color: #5c7080;*/
 }
+.CodeMirror-activeline-background {
+  background: transparent !important;
+}
+.CodeMirror-focused .CodeMirror-activeline-background {
+  background: rgba(100, 100, 100, 0.1) !important;
+}
+html[data-roam-layout-theme="Compact"] {
+  --s1: 4px;
+}
+html[data-roam-layout-theme="Cozy"] {
+  --s1: 12px;
+}
+html[data-roam-color-theme="Roam-Classic"] {
+  --primary-color: #137cbd;
+}
+html[data-roam-color-theme="Alexandretta"] {
+  --primary-color: #48aff0;
+  --background-color: #30404d;
+}
 html {
   font-family: 'Inter', sans-serif;
 }
@@ -687,6 +933,11 @@ html {
     font-family: 'Inter var', sans-serif;
   }
 }
+/* :root {
+  --primary-color: #137cbd;
+  --s1: 8px;
+  --background-color: #e1e8ed;
+} */
 body {
   overscroll-behavior: none;
 }
@@ -721,7 +972,6 @@ body {
   overflow: hidden;
   position: relative;
   background-color: var(--body-bg); /*RR change: Dark background color*/
-
 }
 .roam-body .roam-app {
   height: 100%;
@@ -735,9 +985,8 @@ body {
   /*color: #202b33;*/
   /*RR change: font, blue text and background highlight*/
   color: var(--h1-font-color);
-  background-color: var(--h1-bg);
-  padding-left: 10px;
-  font-family: var(--main-font);
+  font-family: var(--main-font); /* KEPT HIS which got rid of my background-color: var(--h1-bg); and padding-left: 10px; */
+
 }
 .roam-body .roam-app .roam-sidebar-container {
   position: absolute;
@@ -989,14 +1238,17 @@ body {
 .roam-table th,
 .roam-table td,
 .roam-table tr {
+  /*font-size: 12px;*/
   min-width: 100px;
   max-height: 20px;
   padding: 8px 16px;
   margin: 0;
-  /*font-size: 12px;*/
   /*border: 1px solid grey;*/
   font-size: 0.9em; /*RR change: font size*/
   border: 1px solid var(--table-border); /*RR change: darken border*/
+  font-family: var(--main-font); /*RR change: theme font*/
+}
+.roam-table div {
   font-family: var(--main-font); /*RR change: theme font*/
 }
 .roam-table td {
@@ -1055,9 +1307,11 @@ body {
   font-size: 7px;
 }
 .CodeMirror {
+  /* font-family: monospace; */
   font-family: var(--code-font); /*RR change: added theme font*/
 }
 .CodeMirror .CodeMirror-code pre {
+  /* font-family: monospace; */
   font-family: var(--code-font); /*RR change: added theme font*/
   box-shadow: none;
 }
@@ -1079,7 +1333,7 @@ body {
 .rm-page-ref-tag {
   /*color: #a7b6c2;*/
   color: var(--tag-font-color); /*RR change: theme color*/
-  border-radius: 10px;
+  border-radius: 3px;
   padding: 2px 3px 2px 3px;
   background-color: var(--tag-bg); /* SPM ADDED */
   text-decoration: none; /* SPM ADDED */
@@ -1101,16 +1355,20 @@ span.rm-page-ref.rm-page-ref-tag:hover {
   /*color: #106ba3;*/
   color: var(--page-link-color); /*RR change: theme color*/
 }
+
+/*RR change: added option to change the ref link color on Daily Notes page */
+.roam-log-page .rm-page-ref-link-color {
+  color: var(--daily-notes-link-color);
+}
 .rm-page-ref-namespace-color {
   color: green;
 }
 .rm-block-ref {
-  padding: 4px 2px;
+  padding: 2px 2px; /*RR change: reduced top and bottom padding*/
   margin: -4px 0;
   display: inline;
+  /* border-bottom: 0.5px solid #d8e1e8; */
   cursor: alias;
-  /*border-bottom: 1px solid #ced9e0;*/
-  /*font-size: 0.9em;*/
   /*RR change: keep the references blocks the same size*/
   border-bottom: 1px solid var(--block-ref-border);
   font-size: var(--block-ref-font-size);
@@ -1186,11 +1444,24 @@ div.rm-block-ref {
   -ms-transform: rotate(45deg);
   transform: rotate(40deg) scale(0.8);
 }
+
+/*RR change: align checkboxes in zoomed-in headings */
+
+.rm-level1 label.check-container {
+  margin-bottom: 17px;
+  margin-right: -3px;
+}
+
 #roam-sidebar-logo a {
   text-decoration: none;
 }
 #roam-sidebar-logo:hover {
   background-color: #10161a;
+}
+/* RR change: more subtle logo */
+#roam-sidebar-logo img,
+#roam-sidebar-logo span {
+  opacity: 0.4;
 }
 .rm-find-or-create-wrapper {
   position: relative;
@@ -1217,7 +1488,8 @@ div.rm-block-ref {
 }
 .rm-find-or-create-wrapper .rm-menu-item .rm-search-list-item {
   word-break: break-word;
-  color: #8a9ba8; /*red RR change: this is the search results body text color*/
+  /* color: #8a9ba8;  */
+  color: var(--search-body-font-color); /*RR change: this is the search results body text color*/
   overflow-wrap: break-spaces;
   margin-left: -20px;
 }
@@ -1272,13 +1544,16 @@ div.rm-block-ref {
   padding: 8px 4px;
   flex: 1 0 15%;
 }
+.rm-reference-main {
+  padding-top: 8px;
+}
 .rm-reference-item {
   margin-top: 8px;
   margin-right: 8px;
   flex: 1 1 100%;
   word-break: break-word;
-  padding-right: 8px;
   /*background-color: #f5f8fa;*/
+  padding-right: 8px;
   /*RR change: background color and spacing*/
   background-color: var(--reference-item-bg);
   border-radius: 7px;
@@ -1290,18 +1565,25 @@ div.rm-block-ref {
   font-family: var(--main-font);
 }
 
+/*RR change: adjusting disclosure arrow position for references*/
+.rm-reference-item .controls .block-expand {
+  margin-top: 0;
+}
+
 /*RR change: reference font*/
 div.rm-reference-container {
   font-family: var(--main-font);
   margin-bottom: 2em; /*RR change: give a little breathing room for the unreferenced links section*/
 }
-
-.rm-level1 div.rm-block-text {
-  font-weight: 400;
-  font-size: 1.2em;
-  /* font-size: var(--main-font-size); RR change: font size reduction */
+.rm-level1 {
   /*font-family: 'Inter', sans-serif;*/
+  font-weight: 400;
+  font-size: 1.8em;
+  /* color: var(--h1-font-color); */
   font-family: var(--main-font); /*RR change: font change*/
+  /* background-color: var(--h1-bg); */
+  /* padding-left: 10px; */
+  /* margin-top: -4px !important; */
 }
 .rm-level1 textarea {
   line-height: 1.2;
@@ -1309,18 +1591,54 @@ div.rm-reference-container {
 .rm-level1 .roam-block {
   line-height: 1.2;
 }
-.rm-level2 div.rm-block-text{
-  /*font-family: 'Inter', sans-serif !important;*/
+.rm-level2 {
+  /* font-family: 'Inter', sans-serif !important; */
   font-weight: 400;
-  font-size: 1.4em;
+  font-size: 1.6em;
   font-family: var(--main-font);
+  color: var(--h2-font-color);
+  /* margin-top: -5px !important; */
+}
+.rm-level2 textarea {
+  line-height: 1.2;
+  margin-top: 3px;
+  /* font-size: 1.4em; */
 }
 .rm-level3 {
-  font-weight: 500;
-  font-size: 1.2em;
-  color: #5c7080;
+  font-weight: 700;
+  font-size: 1.1em;
+  /* color: #5c7080; */
+    color: var(--h3-font-color);
   font-family: var(--main-font);
 }
+.rm-level3 textarea {
+  line-height: 1.2;
+  margin-top: 2px;
+  /* font-size: 1.2em; */
+  /* font-weight: normal; */
+}
+
+/*RR change: Header styles*/
+.roam-app h1 {
+  /* color: var(--h1-font-color); */
+  /* background-color: var(--h1-bg); */
+  /* padding-left: 10px; */
+  margin-top: -4px !important;
+}
+.roam-app h2 {
+  /* color: var(--h2-font-color); */
+  /* background-color: var(--h1-bg); */
+  /* padding-left: 10px; */
+  margin-top: -5px !important;
+}
+.roam-app h3 {
+  /* font-weight: bold; */
+  /* color: var(--h3-font-color); */
+  /* background-color: var(--h1-bg); */
+  /* padding-left: 10px; */
+  margin-top: 3px !important;
+}
+
 .rm-title1 {
   word-break: break-word;
   font-weight: 400;
@@ -1395,9 +1713,10 @@ div.rm-reference-container {
   padding: 2px;
 }
 .roam-highlight {
+  /* background-color: #fef09f; */
   margin: -2px;
   padding: 2px;
-  background-color: #fef09f;
+  background-color: var(--highlight-background-color);
   color: var(--highlight-font-color); /*RR change: invert the highlighted text color*/
 }
 .roam-highlight .rm-page-ref-link-color {
@@ -1412,9 +1731,11 @@ div.rm-reference-container {
 }
 .rm-encrypted-block {
   font-weight: 300;
+  /* color: #8a9ba8; */
   color: var(--encrypted-font-color);
   font-size: 12px;
   border-radius: 4px;
+  /* background-color: #f5f8fa; */
   background-color: var(--encrypted-bg);
   padding: 2px 4px;
   display: inline;
@@ -1436,7 +1757,92 @@ div.rm-reference-container {
 #right-sidebar .roam-bullet-closed {
   /*background-color: #a7b6c2;*/
   background-color: var(--bullet-closed); /*RR change: orange color to match open bullets*/
-
+}
+#right-sidebar .rm-reference-main {
+  border: none;
+  padding: none;
+}
+.rm-inline-img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.zoom-path-view {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -12px;
+  margin-left: 4px;
+  margin-bottom: 12px;
+}
+.zoom-path-view .rm-zoom-mask {
+  mix-blend-mode: saturation;
+  background-color: white;
+  flex: 1 1 100%;
+}
+.zoom-mentions-view {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 12px;
+  margin-left: 8px;
+}
+.zoom-mentions-view .rm-inline-img {
+  max-height: 20px;
+  width: 20px;
+}
+.zoom-mentions-view .rm-mention-icon {
+  font-size: 8px;
+}
+.rm-zoom .rm-resize-img {
+  max-width: 24px !important;
+}
+.rm-zoom .rm-resize-img .hoveronly {
+  display: none;
+}
+.rm-zoom .rm-inline-img {
+  max-height: 24px;
+  max-width: 24px;
+}
+.rm-zoom .parent-path-wrapper {
+  max-height: 48px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.rm-zoom .parent-path-wrapper .roam-table {
+  display: none;
+}
+.rm-zoom .parent-path-wrapper .rm-query {
+  display: none;
+}
+/* RR change: moved this section to top of CSS for user options
+.rm-query {
+  border: 0.5px solid #38332e;
+  padding-bottom: var(--s1);
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border-radius: 7px;
+}
+.rm-query .rm-query-title {
+  color: #508bb5;
+  background-color: #38332e;
+  padding: var(--s1);
+  font-size: .8em;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+} */
+.rm-mentions .rm-ref-page-view {
+  margin-top: 4px;
+  margin-left: 4px;
+}
+.rm-mentions .rm-ref-page-view .rm-ref-page-view-title {
+  font-size: 16px;
+}
+.rm-mentions .rm-ref-page-view .rm-title-arrow-wrapper {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+}
+.rm-mentions .rm-ref-page-view .rm-title-arrow-wrapper .rm-caret {
+  padding: 2px;
 }
 .rm-icon {
   color: #ced9e0;
@@ -1507,6 +1913,36 @@ div.rm-reference-container {
   margin-top: 20px;
   width: 70%;
 }
+.rm-saving-icon {
+  height: 24px;
+  width: 24px;
+  align-items: center;
+  justify-content: center;
+}
+.rm-saving-icon .rm-saving-inner-icon {
+  border-radius: 50%;
+  opacity: 0.7;
+  width: 10px;
+  height: 10px;
+}
+.rm-saving-icon .rm-saving-local {
+  /* background-color: #99280f; */
+  background-color: var(--saving-local); /*RR change: added variable*/
+}
+.rm-saving-icon .rm-saving-remote {
+  background-color: #d9822b;
+  background-color: var(--saving-remote); /*RR change: added variable*/
+}
+.rm-saving-icon .rm-synced {
+  background-color: #0f9960;
+  background-color: var(--synched); /*RR change: added variable*/
+  }
+.rm-theme-selector div {
+  padding: var(--s1);
+}
+.rm-theme-selector div button {
+  margin: var(--s1);
+}
 .level1 {
   font-family: Roboto, sans-serif;
   font-weight: 200;
@@ -1515,6 +1951,30 @@ div.rm-reference-container {
   letter-spacing: normal;
   /*-ms-font-feature-settings:    'ss20' 1;*/
 }
+
+/*RR change: added missing styles*/
+.level2 {
+  /* font-family: Roboto,sans-serif; */
+  font-family: var(--main-font);
+  font-weight: 200;
+  font-size: 26px;
+  /* color: rgba(0,0,0,1); */
+  color: var(--h2-font-color);
+  letter-spacing: .001em;
+}
+.level3 {
+  /* font-family: Roboto,sans-serif; */
+  font-family: var(--main-font);
+  font-weight: 500;
+  font-size: 15px;
+  /* color: rgba(68,68,68,1); */
+  color: var(--h3-font-color);
+  letter-spacing: .002em;
+}
+.roam-body .roam-app h1.level2 {
+  margin-top: 4px !important;
+}
+
 .rm-pm-editor {
   padding: 5px;
   min-height: 100px;
@@ -1536,35 +1996,11 @@ div.rm-reference-container {
   font-weight: 400;
   font-size: 1.4em;
 }
-
 .rm-pm-editor h3 {
   font-weight: 500;
   font-size: 1.2em;
   color: #5c7080;
 }
-
-/*RR change: Header styles*/
-.roam-app h1 {
-  color: var(--h1-font-color);
-  background-color: var(--h1-bg);
-  padding-left: 10px;
-  margin-top: -4px !important;
-}
-.roam-app h2 {
-  color: var(--h2-font-color);
-  background-color: var(--h1-bg);
-  padding-left: 10px;
-  margin-top: -5px !important;
-}
-.roam-app h3 {
-  font-weight: bold;
-  color: var(--h3-font-color);
-  background-color: var(--h1-bg);
-  padding-left: 10px;
-  margin-top: -3px !important;
-}
-
-
 .rm-pm-editor img {
   max-width: 100%;
 }
@@ -1613,7 +2049,8 @@ div.rm-reference-container {
   background-color: var(--block-highlight); /*RR change: Darker Blue for readability*/
 }
 .block-highlight-yellow {
-  background-color: yellow;
+  /* background-color: yellow; */
+  background-color: var(--block-highlight-bg); /*RR change: added variable*/
 }
 .block-bullet-view {
   flex: 1 1 100%;
@@ -1637,6 +2074,7 @@ div.rm-reference-container {
 }
 .roam-block {
   min-height: calc(1.5em + 8px);
+  /* min-height: 1.5em; */
   box-sizing: border-box;
   white-space: pre-wrap;
   overflow-wrap: break-word;
@@ -1649,9 +2087,13 @@ div.rm-reference-container {
   padding-bottom: 4px;
 }
 /*RR change: theme font catch-all*/
-div.roam-block {
+/* div.roam-block { */
+.roam-block {
   font-family: var(--main-font);
   font-size: var(--main-font-size);
+}
+#roam-right-sidebar-content div {
+  font-family: var(--main-font);
 }
 .roam-block .span-view {
   box-sizing: border-box;
@@ -1661,7 +2103,8 @@ div.roam-block {
   max-width: 100%; /*RR change: make references as wide as possible*/
 }
 /*RR change: Theme body font settings*/
-div.rm-block-text {
+/* div.rm-block-text { */
+.rm-block-text {
   font-family: var(--main-font);
   font-size: var(--main-font-size);
 }
@@ -1672,7 +2115,7 @@ div.rm-block-text {
   overflow-wrap: break-spaces;
   vertical-align: top;
   margin-top: -1px;
-  background-color: transparent;
+  /* background-color: transparent; */
   padding-top: 4px;
   padding-bottom: 4px;
   letter-spacing: inherit;
@@ -1689,8 +2132,9 @@ div.rm-block-text {
 .controls {
   display: flex;
   flex: 0 0 40px;
-  padding-top: 4px;
+  /* padding-top: 4px; */
   padding-left: 4px;
+  padding-top: 2px; /*RR change: slight adjustment for bullet position*/
 }
 .controls .block-expand {
   transform: scale(1);
@@ -1721,7 +2165,8 @@ div.rm-block-text {
   display: flex;
   height: 13px;
   width: 13px;
-  margin-top: 3px;
+  /* margin-top: 3px; */
+  margin-top: var(--bullet-position); /*RR change: added variable for adjustment*/
   border-radius: 50%;
   justify-content: center;
   align-items: center;
@@ -1798,7 +2243,10 @@ div.rm-block-text {
   background-color: #bfccd6;
 }
 .block-ref-count-button {
-  font-size: 0.9em;
+  /* font-size: 0.8em; */
+  /* opacity: 0.5; */
+  cursor: pointer;
+  font-size: var(--ref-count-font-size); /*RR change: added variable*/
 }
 .rm-grey-text {
   color: #8a9ba8;
@@ -1876,6 +2324,8 @@ div {
   padding: 0px;
 }
 textarea {
+  font-family: 'Inter', sans-serif;
+  font-size: 1em;
   font-family: var(--main-font);
   font-size: var(--main-font-size);
   line-height: 1.5em;
@@ -1901,6 +2351,9 @@ font-size: 1.0em;
 .display-inline-flex {
   display: -webkit-inline-flex;
   display: inline-flex;
+}
+.flex {
+  flex: 1;
 }
 .react-resizable {
   position: relative;
@@ -1937,7 +2390,18 @@ font-size: 1.0em;
   /* Non-prefixed version, currently */
 }
 
+/* ----------------------------------------- */
+/* End of standard Roam Styles */
+/* ----------------------------------------- */
+
+
 /*RR change: Icon color*/
+.bp3-button .bp3-icon,
+.bp3-button .bp3-icon-standard,
+.bp3-button
+.bp3-icon-large {
+  color: var(--icon-color);
+}
 
 .bp3-icon-graph:before,
 .bp3-icon-star:before,
@@ -1948,7 +2412,7 @@ font-size: 1.0em;
 .bp3-minimal:before,
 .bp3-small:before,
 .bp3-icon-filter {
-  color: #e78924 !important;
+  color: var(--icon-color);
 }
 
 .bp3-button.bp3-minimal {
@@ -1960,18 +2424,28 @@ font-size: 1.0em;
   box-shadow: none;
   background-color: transparent;
   background-image: none;
-  color: #999;
+  /* color: #999; */
+  color: var(--icon-color);
+  font-weight: 700;
 }
 .bp3-button:not([class*="bp3-intent-"]):hover {
-  background-color: rgba(167,182,194,0.3);
+  /* background-color: rgba(167,182,194,0.3); */
+  background-color: var(--icon-bg-hover);
+  color: var(--icon-color-hover);
 }
 
 .bp3-button.bp3-small:not([class*="bp3-minimal"]) {
   background-color: #191919;
-  color: #777;
+  color: var(--icon-color);
 }
 .bp3-button.bp3-small:not([class*="bp3-minimal"]):hover {
-  background-color: rgba(167,182,194,0.3);
+  /* background-color: rgba(167,182,194,0.3); */
+  background-color: var(--icon-bg-hover);
+  color: var(--icon-color-hover);
+}
+
+.bp3-button[class*="bp3-icon-"]::before {
+    color: inherit;
 }
 
 /*bp3-button bp3-minimal bp3-small bp3-icon-standard bp3-icon-menu-open
@@ -1995,17 +2469,24 @@ bp3-button bp3-small block-ref-count-button*/
 
 /* Input Text Color */
 .bp3-input {
-  color: var(--search-font-color);
+  color: var(--popover-font-color);
 }
 
 /* Roam Search Box Field and Border */
 .bp3-input,
 .bp3-input[readonly]{
   background: var(--search-bg);
-  box-shadow: inset 0 0 0 1px var(--search-outline);
+  /* box-shadow: inset 0 0 0 1px var(--search-outline); */
+  box-shadow: none;
   font-size: 0.85em;
 }
-
+.bp3-input:focus, .bp3-input.bp3-active {
+  /* -webkit-box-shadow: 0 0 0 1px #137cbd, 0 0 0 3px rgba(19,124,189,0.3), inset 0 1px 1px rgba(16,22,26,0.2); */
+  box-shadow: 0 0 0 1px var(--search-outline);
+  /* -webkit-box-shadow: none; */
+  /* box-shadow: none; */
+  border: var(--search-outline);
+}
 /*RR change: additional text styles*/
 .roam-app strong {
   color: var(--strong) !important;
@@ -2013,7 +2494,6 @@ bp3-button bp3-small block-ref-count-button*/
 
 .roam-app em {
   color: var(--emphasis);
-  /*color: #ff8880;*/
 }
 
 /*RR change: Markdown Links */
@@ -2028,6 +2508,14 @@ bp3-button bp3-small block-ref-count-button*/
   text-decoration: underline;
 }
 
+#roam-right-sidebar-content a {
+  color: var(--sidebar-link-color);
+}
+.roam-right-sidebar-content a:focus,
+.roam-right-sidebar-content a:hover {
+  color: var(--sidebar-link-color);
+  text-decoration: underline;
+}
 hr {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -2048,7 +2536,7 @@ hr {
 .bp3-popover .bp3-popover-content,
 .bp3-menu {
   background: var(--popover-bg);
-  color: var(--search-font-color);
+  color: var(--popover-font-color);
   border-radius: 4px;
 }
 
@@ -2065,14 +2553,15 @@ hr {
 }
 
 .bp3-html-select.bp3-minimal select {
-  color: var(--search-font-color);
+  color: var(--popover-font-color);
   background-color: var(--select-bg);
 }
 
 /* Slash [/] and page-ref-search inline Popup - SPM COMMENT EDIT*/
 div.bp3-elevation-3 {
-  color: #1775db;
-  background-color: white !important; /* #333 !important; SPM CHANGED */
+  /* color: #1775db; */
+  color: var(--popover-font-color);
+  background-color: var(--inline-search-bg) !important;
   font-size: 1em; /* 0.85em; SPM CHANGED */
   border-radius: 4px;
   box-shadow: 0 0 0 2px #222,
@@ -2081,11 +2570,11 @@ div.bp3-elevation-3 {
 }
 [title~=Search] {
   color: #1775db !important; /*RR change: Bi-directional place holder text*/
-  color: var(--search-font-color) !important; /*RR change: Bi-directional place holder text*/
+  color: var(--popover-font-color) !important; /*RR change: Bi-directional place holder text*/
 }
 .bp3-elevation-3 .dont-unfocus-block[style*="background-color: rgb(213, 218, 223);"],
 .bp3-popover-content .rm-menu-item[style*="background-color: rgb(213, 218, 223);"]  {
-  background-color: #4c4c4c !important;
+  background-color: var(--search-selected-row) !important;
 /*filter: invert(100%); /*RR change: Inverts the colors of the / and link search menus*/
 
 }
@@ -2126,8 +2615,8 @@ blockquote .small, blockquote footer, blockquote small {
 }
 
 select {
-  background-color: #444 !important;
-  border-color: #777;
+  background-color: var(--select-bg) !important;
+  border-color: var(--search-outline);
 }
 
 /*RR change: This section contains a series of very specific overrides that are extremely fragile and will probably break with any minor update*/
@@ -2136,7 +2625,7 @@ select {
 
 div[style^='overflow: hidden; margin-left: -8px; background-color: rgb(235, 241, 245); margin-top: -4px;']{
   background-color: var(--block-embed-bg) !important;
-  font-size: var(--block-embed-font-size);
+  /* font-size: var(--block-embed-font-size); */
 }
 
 /*RR change: Very fragile override for alias styes, will probably break*/
@@ -2149,11 +2638,100 @@ span[style^='background-color: rgb(235, 241, 245); border-radius: 4px; cursor: a
 }
 
 /*RR change: Very fragile override for the filter icon backgroung when a filter is applied*/
-span[style^='background-color: red;'] {
+/* these might already be broken */
+span[style*='background-color: red;'] {
   background-color: var(--filter-bg-subtract) !important;
 }
-span[style^='background-color: green;'] {
+span[style*='background-color: green;'] {
   background-color: var(--filter-bg-add) !important;
+}
+
+/*RR change: Very fragile overrides for a page embed*/
+.roam-block div[style*="background-color: rgb(235, 241, 245);" ] {
+  background-color: var(--reference-item-bg) !important;
+  /* font-size: 0.8em; */
+  padding: 10px;
+  padding-top: 17px;
+}
+.roam-block div[style*="background-color: rgb(235, 241, 245);" ] .bp3-button {
+  margin-top: -7px;
+}
+.roam-block div[style*="background-color: rgb(235, 241, 245);" ] h2 {
+background-color: transparent;
+}
+
+.bp3-button.bp3-intent-primary {
+    -webkit-box-shadow: inset 0 0 0 1px rgba(16,22,26,0.4), inset 0 -1px 0 rgba(16,22,26,0.2);
+    box-shadow: inset 0 0 0 1px rgba(16,22,26,0.4), inset 0 -1px 0 rgba(16,22,26,0.2);
+    background-color: var(--checkmark-color);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(255,255,255,0.1)),to(rgba(255,255,255,0)));
+    background-image: linear-gradient(to bottom,rgba(255,255,255,0.1),rgba(255,255,255,0));
+    color: #fff;
+}
+
+.bp3-button.bp3-intent-primary:hover {
+    -webkit-box-shadow: inset 0 0 0 1px rgba(16,22,26,0.4), inset 0 -1px 0 rgba(16,22,26,0.2);
+    box-shadow: inset 0 0 0 1px rgba(16,22,26,0.4), inset 0 -1px 0 rgba(16,22,26,0.2);
+    background-color: var(--checkmark-color);
+    opacity: 80%;
+}
+
+/*RR change: Diagram styles*/
+div[style*="position: absolute;background-color: white;border: 1px solid lightgrey;border-radius: 0px 0px 4px;padding: 5px;top: 0px;left: 0px;"],
+div[style*="position: absolute; background-color: white; border: 1px solid lightgrey; border-radius: 0px 0px 4px; padding: 5px; top: 0px; left: 0px;"]
+{
+  background-color: var(--kanban-board-bg) !important;
+  border-color: var(--kanban-card-bg) !important;
+}
+.roam-body .roam-app svg div{
+  /* color: var(--strong); */
+    color: #202b33;
+}
+svg .rm-page-ref-link-color {
+  color: #106ba3;
+}
+svg .rm-page-ref-brackets {
+  color: #a7b6c2;
+}
+
+/*RR change: dialog window styles*/
+.bp3-dialog {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 30px 0;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 0 0 1px rgba(16,22,26,0.1), 0 4px 8px rgba(16,22,26,0.2), 0 18px 46px 6px rgba(16,22,26,0.2);
+  box-shadow: 0 0 0 1px rgba(16,22,26,0.1), 0 4px 8px rgba(16,22,26,0.2), 0 18px 46px 6px rgba(16,22,26,0.2);
+  background: #333 !important;
+  color: #eee;
+  width: 500px;
+  padding-bottom: 20px;
+  pointer-events: all;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+input, button {
+  line-height: normal;
+  background-color: var(--reference-item-bg);
+  border: 1px solid var(--bullet);
+  padding: 5px;
+}
+
+button[style*="border: 0.5px solid rgb(206, 217, 224);"] {
+  background-color: var(--reference-item-bg) !important;
+  border: 1px solid var(--reference-item-bg) !important;
+}
+button[style*="background-color: rgba(72, 176, 240, 0.5);"]{
+  background-color: var(--reference-item-bg) !important;
+  border: 1px solid var(--icon-color) !important;
 }
 
 /*RR change: Codemirror adjustments*/
@@ -2181,15 +2759,12 @@ code {
 
 div.CodeMirror .CodeMirror-code pre {
   font-family: var(--code-font);
-  line-height: 1.4em; /*1.2em; SPM CHANGED*/
-  font-size: 1.2em; /*0.9em; SPM CHANGED*/
+  line-height: 1.5em;
+  font-size: var(--code-font-size);
 }
 
-/*<!--activeline-->*/
-.CodeMirror-activeline-background { background: #253540; }
-
-.CodeMirror {background: var(--code-bg); color: #f4f1ed; font-size: 0.85em;}
-div.CodeMirror-selected {background: lemonchiffon !important; /*#272935; SPM CHANGED*/}
+.CodeMirror {background: var(--code-bg); color: #f4f1ed; font-size: var(--code-font-size); border-radius: 8px;}
+div.CodeMirror-selected {background: #4d516d !important;} /*Original was #272935; then SPM CHANGED to lemonchiffon; now using Jeeff's*/
 .CodeMirror-gutters {background: #2b2b2b; border-right: 1px solid #333;}
 .CodeMirror-linenumber {color: #eb9854; /*#5a647e; SPM CHANGED*/}
 .CodeMirror-cursor {border-left: 1px solid Black !important; /*1px solid #d4cfc9 !important; SPM CHANGED*/}
@@ -2213,16 +2788,17 @@ span.cm-bracket {color: #f4f1ed;}
 span.cm-tag {color: #da4939;}
 span.cm-link {color: #b6b3eb;}
 
-.cm-s-default .cm-atom { color: #2983bb;}
+
+/*RR change: Added styles*/
 
 .CodeMirror-matchingbracket { text-decoration: none; color: Red !important; background-color: yellow; /*text-decoration: underline; color: white !important; SPM CHANGED*/}
 .CodeMirror-activeline-background { background: #e8f2ff; /*#303040; SPM CHANGED*/}
 
-.CodeMirror-lines {background: #fff; /*.CodeMirror pre {background: #2b2b2b; SPM CHANGED*/}
-.CodeMirror-activeline pre {background: #e8f2ff; /* SPM ADDED */}
+/*<!--activeline-->*/
+.CodeMirror-activeline-background { background: #253540; }
 
-
-.CodeMirror-lines {background: #2b2b2b;}
+.CodeMirror pre {background: var(--code-bg);}
+.CodeMirror-lines {background: var(--code-bg);} /*SPM had changed to #fff but now going with Jeff's*/
 .CodeMirror-activeline pre {background: #253540; /* SPM ADDED */}
 
 /* SPM copied from roam-orig css on 5-4-20 */
@@ -2297,3 +2873,6 @@ div.rm-reference-item > div > div > div > span.bp3-icon-chevron-right {
 }
 
 /* END OF SPM ADDED FORMATTING */
+
+.cm-s-default .cm-atom { color: #2983bb;}
+.cm-s-default .cm-builtin {color: #db6bff;}
