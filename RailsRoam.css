@@ -55,7 +55,7 @@
   --new-page-color: #8DBB40;
   --popover-font-color: #e98924;
   --ref-count-font-size: 12px;
-  --breadcrumb-color: #5c7080;
+  --breadcrumb-color: lightskyblue; /* #5c7080; SPM CHANGED 5/21/20 */
   --breadcrumb-font-size: 13px;
   --breadcrumb-line-height: 0.85em;
 
