@@ -2624,10 +2624,19 @@ select {
 
 /*RR change: Super fragile override for Block embeds to change the background color and font-size*/
 
+/* SPM CHANGED 5/27/20 */
+/* SPM comment out
 div[style^='overflow: hidden; margin-left: -8px; background-color: rgb(235, 241, 245); margin-top: -4px;']{
   background-color: var(--block-embed-bg) !important;
-  /* font-size: var(--block-embed-font-size); */
+  font-size: var(--block-embed-font-size);
 }
+SPM end of comment out */
+/* SPM ADDED */
+div.rm-embed-container {
+  background-color: var(--block-embed-bg) !important;
+  /* font-size: var(--block-embed-font-size);*/
+}
+/* SPM END OF CHANGES */
 
 /*RR change: Very fragile override for alias styes, will probably break*/
 span[style^='background-color: rgb(235, 241, 245); border-radius: 4px; cursor: alias; color: rgb(245, 86, 86); padding: 4px 6px;'] {
