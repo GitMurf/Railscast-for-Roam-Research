@@ -2567,7 +2567,9 @@ div.bp3-elevation-3 {
   border-radius: 4px;
   box-shadow: 0 0 0 2px #222,
               0 2px 15px #222;
-  font-weight: bold; /* SPM ADDED */
+  /*font-weight: bold; SPM commented out 6/1/20 */ /* SPM ADDED */
+  width: 95% !important; /* SPM ADDED 6/1/20 */
+  max-width: 95% !important; /* SPM ADDED 6/1/20 */
 }
 [title~=Search] {
   color: #1775db !important; /*RR change: Bi-directional place holder text*/
