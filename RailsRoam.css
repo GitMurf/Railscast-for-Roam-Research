@@ -193,10 +193,12 @@ inspried by David Cranall https://davidcrandallwrites.com/split-screen-and-rtl-c
 
 /*RR change: SEARCH RESULTS WRAPPING - Wraps text when performing an inline search with [[]] or (())*/
 
-/* .bp3-text-overflow-ellipsis {
+.bp3-text-overflow-ellipsis { /* SPM uncommented to use on 6/3/20 */
     text-overflow: unset;
     white-space: unset;
-} */
+    max-height: 43px; /* SPM ADDED on 6/3/20 */
+    line-height: 1em; /* SPM ADDED on 6/3/20 */
+}
 
 /* ----------------------------------------- */
 
@@ -2570,6 +2572,8 @@ div.bp3-elevation-3 {
   /*font-weight: bold; SPM commented out 6/1/20 */ /* SPM ADDED */
   width: 95% !important; /* SPM ADDED 6/1/20 */
   max-width: 95% !important; /* SPM ADDED 6/1/20 */
+  max-height: 600px !important; /* SPM ADDED 6/3/20 */
+  left: 0px !important; /* SPM ADDED 6/3/20 */
 }
 [title~=Search] {
   color: #1775db !important; /*RR change: Bi-directional place holder text*/
@@ -2756,6 +2760,7 @@ code {
     border: 0px solid #13191e;
     padding: 3px 4px 3px 4px;
     font-family: var(--code-font);
+    font-weight: bold; /* SPM ADDED 6/3/20 */
 }
 
 
