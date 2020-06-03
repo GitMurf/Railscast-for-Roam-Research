@@ -22,7 +22,7 @@
   --main-font-color: white; /* #999; SPM CHANGED */
   --main-font-size: 1.0em;
   --code-font: 'Source Code Pro', 'Courier New', Courier, monospace;
-  --code-font-color: #6d9cbe;
+  --code-font-color: red; /* #6d9cbe; SPM CHANGED 6/3/20 */
   --code-font-size: 1.0em;
 
   /* font colors */
@@ -2776,10 +2776,10 @@ div.CodeMirror .CodeMirror-code pre {
 }
 
 .CodeMirror {background: var(--code-bg); color: #f4f1ed; font-size: var(--code-font-size); border-radius: 8px;}
-div.CodeMirror-selected {background: #4d516d !important;} /*Original was #272935; then SPM CHANGED to lemonchiffon; now using Jeeff's*/
+div.CodeMirror-selected {background: darkcyan !important;} /*Original was #272935; then SPM CHANGED to lemonchiffon; now using Jeff's #4d516d; now changed to mine 6/3/20*/
 .CodeMirror-gutters {background: #2b2b2b; border-right: 1px solid #333;}
 .CodeMirror-linenumber {color: #eb9854; /*#5a647e; SPM CHANGED*/}
-.CodeMirror-cursor {border-left: 1px solid Black !important; /*1px solid #d4cfc9 !important; SPM CHANGED*/}
+.CodeMirror-cursor {border-left: 1px solid white !important; /*1px solid #d4cfc9 !important; SPM CHANGED*/}
 
 span.cm-comment {color: #bc9458;}
 span.cm-atom {color: #b6b3eb;}
@@ -2793,25 +2793,25 @@ span.cm-string {color: #ffc66d;}
 .cm-s-default .cm-string {color: #ffc66d;}
 
 span.cm-variable-2 {color: #a5c261;}
-span.cm-variable {color: #6d9cbe;}
+span.cm-variable {color: bisque;} /* #6d9cbe; SPM CHANGED 6/3/20 */
 span.cm-def {color: #cc7833;}
 span.cm-error {/*background: #da4939;*/ color: #da4939;}
-span.cm-bracket {color: #f4f1ed;}
+span.cm-bracket {color: lime !important;} /* #f4f1ed; SPM CHANGED 6/3/20 */
 span.cm-tag {color: #da4939;}
 span.cm-link {color: #b6b3eb;}
 
 
 /*RR change: Added styles*/
 
-.CodeMirror-matchingbracket { text-decoration: none; color: Red !important; background-color: yellow; /*text-decoration: underline; color: white !important; SPM CHANGED*/}
-.CodeMirror-activeline-background { background: #e8f2ff; /*#303040; SPM CHANGED*/}
+span.CodeMirror-matchingbracket {text-decoration: none; color: white !important; background-color: darkcyan; font-weight: bold;} /*text-decoration: underline; color: white !important; SPM CHANGED 6/3/20*/
+span.CodeMirror-nonmatchingbracket {text-decoration: none; color: red !important; background-color: lemonchiffon; font-weight: bold;} /*SPM ADDED 6/3/20*/
 
 /*<!--activeline-->*/
-.CodeMirror-activeline-background { background: #253540; }
+.CodeMirror-activeline-background {background: #e8f2ff;} /*#303040; #253540; SPM CHANGED*/
 
-.CodeMirror pre {background: var(--code-bg);}
+/*.CodeMirror pre {background: var(--code-bg);}*/ /* SPM COMMENTED OUT ON 6/3/20 AT SUGGESTION BY JEFF */
 .CodeMirror-lines {background: var(--code-bg);} /*SPM had changed to #fff but now going with Jeff's*/
-.CodeMirror-activeline pre {background: #253540; /* SPM ADDED */}
+.CodeMirror-activeline pre {background: black; /* SPM ADDED */}
 
 /* SPM copied from roam-orig css on 5-4-20 */
 
@@ -2882,6 +2882,11 @@ div.rm-reference-item > div > div > div > span {
 
 div.rm-reference-item > div > div > div > span.bp3-icon-chevron-right {
   color: var(--reference-item-parent-sep-color);
+}
+
+/* SPM added 6/3/20 for {{calc: }} */
+div.rm-block-text span.bp3-popover-target > span {
+  color: lime !important;
 }
 
 /* END OF SPM ADDED FORMATTING */
