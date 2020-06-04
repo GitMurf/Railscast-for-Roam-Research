@@ -2126,10 +2126,10 @@ div.rm-reference-container {
   /*RR change: added a highlight color*/
   /*color: #bbb;*/
   background-color: var(--current-block-highlight);
-  padding-left: 5px;
+  /*padding-left: 5px;
   padding-right: 5px;
   margin-left: -5px;
-  margin-right: -5px;
+  margin-right: -5px;*/ /* SPM COMMENTED out 6/3/20 */
 }
 .controls {
   display: flex;
