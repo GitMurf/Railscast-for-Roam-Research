@@ -2802,7 +2802,7 @@ span.cm-variable {color: bisque;} /* #6d9cbe; SPM CHANGED 6/3/20 */
 span.cm-def {color: #cc7833;}
 span.cm-error {/*background: #da4939;*/ color: #da4939;}
 span.cm-bracket {color: lime !important;} /* #f4f1ed; SPM CHANGED 6/3/20 */
-span.cm-tag {color: #da4939;}
+span.cm-tag {color: greenyellow;} /*#da4939; SPM CHANGED 6/3/20 */
 span.cm-link {color: #b6b3eb;}
 
 
