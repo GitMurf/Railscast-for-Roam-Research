@@ -2816,7 +2816,7 @@ span.CodeMirror-nonmatchingbracket {text-decoration: none; color: red !important
 
 /*.CodeMirror pre {background: var(--code-bg);}*/ /* SPM COMMENTED OUT ON 6/3/20 AT SUGGESTION BY JEFF */
 .CodeMirror-lines {background: var(--code-bg);} /*SPM had changed to #fff but now going with Jeff's*/
-.CodeMirror-activeline pre {background: black; /* SPM ADDED */}
+.CodeMirror-activeline pre {background: grey; /* SPM ADDED */}
 
 /* SPM copied from roam-orig css on 5-4-20 */
 
