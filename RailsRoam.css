@@ -2792,8 +2792,7 @@ span.cm-number {color: #b6b3eb;}
 .cm-s-default .cm-number {color: #b6b3eb;}
 
 span.cm-property,  span.cm-attribute {color: #a5c261;}
-span.cm-keyword {color: greenyellow;} /*#da4939; SPM CHANGED 6/3/20 */
-.cm-s-default .cm-keyword {color: greenyellow;} /*#da4939; SPM CHANGED 6/3/20 */
+.cm-s-default .cm-keyword, span.cm-keyword {color: greenyellow;} /*#da4939; SPM CHANGED 6/3/20 */
 span.cm-string {color: #ffc66d;}
 .cm-s-default .cm-string {color: #ffc66d;}
 
@@ -2802,7 +2801,7 @@ span.cm-variable {color: bisque;} /* #6d9cbe; SPM CHANGED 6/3/20 */
 span.cm-def {color: #cc7833;}
 span.cm-error {/*background: #da4939;*/ color: #da4939;}
 span.cm-bracket {color: lime !important;} /* #f4f1ed; SPM CHANGED 6/3/20 */
-span.cm-tag {color: greenyellow;} /*#da4939; SPM CHANGED 6/3/20 */
+.cm-s-default .cm-tag, span.cm-tag {color: greenyellow;} /*#da4939; SPM CHANGED 6/3/20 */
 span.cm-link {color: #b6b3eb;}
 
 
