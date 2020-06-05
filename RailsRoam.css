@@ -2792,8 +2792,8 @@ span.cm-number {color: #b6b3eb;}
 .cm-s-default .cm-number {color: #b6b3eb;}
 
 span.cm-property,  span.cm-attribute {color: #a5c261;}
-span.cm-keyword {color: #da4939;}
-.cm-s-default .cm-keyword {color: #da4939;}
+span.cm-keyword {color: #greenyellow;} /*#da4939; SPM CHANGED 6/3/20 */
+.cm-s-default .cm-keyword {color: #greenyellow;} /*#da4939; SPM CHANGED 6/3/20 */
 span.cm-string {color: #ffc66d;}
 .cm-s-default .cm-string {color: #ffc66d;}
 
