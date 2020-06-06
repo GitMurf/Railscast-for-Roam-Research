@@ -5,7 +5,142 @@
 > v1.0.19
 */
 
-/* SPM REMOVED VARIABLES FROM HERE TO PASTE INTO ROAM TO UPDATE ON THE FLY ON 6/6/20 */
+/* RR change: added variables to easily change the theme */
+:root {
+  /* SPM Added Variables */
+  --starred-font-size: 1.3em;
+  --reference-item-parent-color: #508BB5;
+  --reference-item-parent-sep-color: gainsboro;
+  /* END OF SPM Added Variables */
+  /* Roam default variables ADDED FROM JEFF MERGE*/
+  --primary-color: #137cbd;
+  --s1: 8px;
+  --background-color: #e1e8ed;
+  /* Primary fonts */
+  --main-font: 'Inter', sans-serif;
+  /* --main-font: 'Calendas Plus', serif; */
+  --main-font-color: white; /* #999; SPM CHANGED */
+  --main-font-size: 1.0em;
+  --code-font: 'Source Code Pro', 'Courier New', Courier, monospace;
+  --code-font-color: red; /* #6d9cbe; SPM CHANGED 6/3/20 */
+  --code-font-size: 1.0em;
+
+  /* font colors */
+  --page-link-color: #eb9854;
+  --daily-notes-link-color:#eb9854;
+  --external-link-color: #8DBB40;
+  --sidebar-link-color: #8DBB40;
+  --page-brackets: rgba(228, 124, 67, 0.25);
+  --h1-font-color: #1189BD;
+  --h2-font-color: #1189BD;
+  --h3-font-color: #1189BD;
+  --strong: #508BB5;
+  --emphasis: #FC5963; /* CHANGED TO MASTER WHEN MERGED... SPM DID HAVE #c43835 */
+  --tag-font-color: Gold; /* #777; SPM CHANGED */
+  --tag-font-color-hover:#fff;
+  --tag-hover-bg:#e98924;
+  --sidebar-font-color: #1189BD;
+  --sidebar-font-color-hover:#e98924;
+  --sidebar-hover-bg:#1f1f1f;
+  --block-ref-bg: none;
+  --block-ref-border: rgba(254, 207, 43, .6);
+  --block-ref-hover: #eb9854;
+  --block-ref-hover-bg:#111;
+  --block-ref-font-size: 1.0em;
+  --highlight-font-color: #222;
+  --highlight-background-color: #fef09f;
+  --highlight-link-color: #ff6000;
+  --search-font-color: #af671c; /* CHANGED TO MASTER WHEN MERGED... SPM DID HAVE #e98924 */
+  --search-body-font-color: #8a9ba8;
+  --new-page-color: #8DBB40;
+  --popover-font-color: #e98924;
+  --ref-count-font-size: 12px;
+  --breadcrumb-color: lightskyblue; /* #5c7080; SPM CHANGED 5/21/20 */
+  --breadcrumb-font-size: 13px;
+  --breadcrumb-line-height: 0.85em;
+
+  /* Saving icon colors */
+  --saving-local: #99280f;
+  --saving-remote: #d9822b;
+  --synched: #0f9960;
+
+  /* backgrounds and outlines */
+  --body-bg: #232323;
+  --left-sidebar-bg: #2b2b2b;
+  --right-sidebar-bg: #2b2b2b;
+  --icon-color: #e78924;
+  --icon-bg-hover: rgba(167,182,194,0.3);
+  --icon-color-hover: #e78924;
+  /* --h1-bg: #1189BD1a; */
+  --hr: rgba(225, 117, 28, 0.50);
+  --code-bg: #333;
+  --checkmark-color: #137cbd;
+  --pages-row-highlight: #292929;
+  --pages-header-row: #2d2d2d;
+  --reference-item-bg: #f2c98f1a;
+  --bullet: rgba(225, 117, 28); /* rgba(225, 117, 28, 0.30); SPM CHANGE [4/25] */
+  --bullet-closed: rgba(225, 117, 28, 0.70);
+  --bullet-outline: #404040;
+  --bullet-position: 4px;
+  --block-highlight: #00588e;
+  --block-highlight-bg: rgba(0, 0, 0, 0.4);
+  --current-block-highlight: rgba(255, 255, 255, 0.05);
+  --search-outline: #e9892475;
+  --search-bg: #252525;
+  --search-selected-row: #4c4c4c;
+  --inline-search-bg: white; /* #333 !important; SPM CHANGED */
+  --popover-bg:#333;
+  --select-bg:#444;
+  --datepicker-bg: transparent;
+  --datepicker-day-wrapper: #d9822b7a;
+
+  /* fragile styles that may break with the next update */
+  --block-embed-bg: #3f3f3f;
+  --block-embed-font-size: 0.85em;
+  --alias-font-color: #FECF2B;
+  --alias-bg: transparent;
+  /*RR change: no longer needed? Already broken?*/
+  /* --filter-bg-subtract: rgba(228, 33, 35, 0.6);
+  --filter-bg-add: rgba(141, 187, 64, 0.5); */
+
+  /* Misc */
+  --kanban-board-bg: #333333;
+  --kanban-column-bg: #454545;
+  --kanban-card-bg: #555555;
+  --kanban-column-font-color: #e98924;
+  --kanban-card-font-color: #6d9cbe;
+
+  --table-border: #444;
+
+  --blockquote-font-color: rgba(109, 156, 190, 0.89);
+  --blockquote-border-color: #444;
+  --blockquote-bg: none;
+  --blockquote-cite: #777;
+
+  --encrypted-font-color:#ff6000;
+  --encrypted-bg:#353535;
+
+  --emoji-bg: #2d2d2d;
+  --emoji-border: rgba(225, 117, 28, 0.40);
+  --emoji-color: #aaa;
+
+  --no-query-results: "Query returned no results";
+  --no-query-results-color: #FC5963;
+  --query-results-border: #f2c98f1a;
+
+  /* Scrollbar settings - to disable set values to none */
+  --scrollbar-track: #2b2b2b;
+  --scrollbar-thumb: rgba(153, 153, 153, 0.1);
+
+  /* JH overrides */
+  /* --main-font: 'Calendas Plus', serif;
+  --main-font-size: 1.2em;
+  --code-font-size: 0.9em;
+  */
+
+}
+
+/* ----------------------------------------- */
 
 /*RR change: CHECKBOX ALGINMENT - adjust the 'top' value to move the checkbox up or down to better align with the font selected above - the default font Inter uses -6px*/
 .check-container {
