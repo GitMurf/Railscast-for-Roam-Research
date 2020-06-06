@@ -2781,12 +2781,12 @@ div.CodeMirror .CodeMirror-code pre {
 }
 
 .CodeMirror {background: var(--code-bg); color: #f4f1ed; font-size: var(--code-font-size); border-radius: 8px;}
-div.CodeMirror-selected {background: darkcyan !important;} /*Original was #272935; then SPM CHANGED to lemonchiffon; now using Jeff's #4d516d; now changed to mine 6/3/20*/
+div.CodeMirror-selected {background: rgba(0,139,139,0.33) !important;} /*Original was #272935; then SPM CHANGED to lemonchiffon; now using Jeff's #4d516d; now changed to mine 6/3/20*/
 .CodeMirror-gutters {background: #2b2b2b; border-right: 1px solid #333;}
 .CodeMirror-linenumber {color: #eb9854; /*#5a647e; SPM CHANGED*/}
 .CodeMirror-cursor {border-left: 1px solid white !important; /*1px solid #d4cfc9 !important; SPM CHANGED*/}
 
-span.cm-comment {color: #bc9458;}
+span.cm-comment {color: white;} /*#bc9458; SPM CHANGED 6/3/20 */
 span.cm-atom {color: #b6b3eb;}
 span.cm-number {color: #b6b3eb;}
 .cm-s-default .cm-number {color: #b6b3eb;}
@@ -2803,6 +2803,7 @@ span.cm-error {/*background: #da4939;*/ color: #da4939;}
 span.cm-bracket {color: lime !important;} /* #f4f1ed; SPM CHANGED 6/3/20 */
 .cm-s-default .cm-tag, span.cm-tag {color: greenyellow;} /*#da4939; SPM CHANGED 6/3/20 */
 span.cm-link {color: #b6b3eb;}
+span.cm-qualifier {color: #F44336 !important;} /* SPM ADDED 6/6/20 */
 
 
 /*RR change: Added styles*/
