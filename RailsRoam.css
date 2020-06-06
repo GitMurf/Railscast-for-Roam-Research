@@ -2786,7 +2786,7 @@ div.CodeMirror-selected {background: rgba(0,139,139,0.33) !important;} /*Origina
 .CodeMirror-linenumber {color: #eb9854; /*#5a647e; SPM CHANGED*/}
 .CodeMirror-cursor {border-left: 1px solid white !important; /*1px solid #d4cfc9 !important; SPM CHANGED*/}
 
-span.cm-comment {color: white;} /*#bc9458; SPM CHANGED 6/3/20 */
+.cm-s-default .cm-comment, span.cm-comment {color: white;} /*#bc9458; SPM CHANGED 6/3/20 */
 span.cm-atom {color: #b6b3eb;}
 span.cm-number {color: #b6b3eb;}
 .cm-s-default .cm-number {color: #b6b3eb;}
