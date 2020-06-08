@@ -31,10 +31,10 @@
   --external-link-color: #8DBB40;
   --sidebar-link-color: #8DBB40;
   --page-brackets: rgba(228, 124, 67, 0.25);
-  --h1-font-color: #1189BD;
-  --h2-font-color: #1189BD;
-  --h3-font-color: #1189BD;
-  --strong: #508BB5;
+  --h1-font-color: #29bcfb; /* #1189BD; SPM CHANGED 6/7/20 */
+  --h2-font-color: #29bcfb; /* #1189BD; SPM CHANGED 6/7/20 */
+  --h3-font-color: #29bcfb; /* #1189BD; SPM CHANGED 6/7/20 */
+  --strong: #29bcfb; /* #508BB5; SPM CHANGED 6/7/20 */
   --emphasis: #FC5963; /* CHANGED TO MASTER WHEN MERGED... SPM DID HAVE #c43835 */
   --tag-font-color: Gold; /* #777; SPM CHANGED */
   --tag-font-color-hover:#fff;
