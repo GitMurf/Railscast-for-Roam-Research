@@ -39,8 +39,8 @@
   --tag-font-color: Gold; /* #777; SPM CHANGED */
   --tag-font-color-hover:#fff;
   --tag-hover-bg:#e98924;
-  --tag-radius: 2em;
-  --tag-padding: 0.25em 0.4375em;
+  --tag-radius: 3px; /* 2em; SPM CHANGED 9/26/20 */
+  --tag-padding: 2px 3px 2px 3px; /* 0.25em 0.4375em; SPM CHANGED 9/26/20 */
   --sidebar-font-color: #1189BD;
   --sidebar-font-color-hover:#e98924;
   --sidebar-hover-bg:#1f1f1f;
