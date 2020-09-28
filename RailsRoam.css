@@ -409,7 +409,7 @@ display:none!important; /* hide page reference (title) */
 
 /*RR change: CUSTOM TAGS: Uncomment to use the section below to create custom styles for specific tags. Change "Meeting" to match some portion of the title of the tag you want to customize. Adjust the background-color value ("F00") and color value ("fff") to suite your preferences. Duplicate the section for each new tag to be customized */
 
-
+/* SPM COMMENTED out 9/27/20
 span[data-tag*="Meeting"] {
   background-color: #1189BD;
   color: #bbb;
@@ -417,7 +417,7 @@ span[data-tag*="Meeting"] {
   line-height: 1.2em;
   font-weight: 500;
 }
-
+*/
 
 
  /*RR change: CUSTOM LINKS: Uncomment to use the section below to create custom styles for specific links. Change "Theme" to match some portion of the title of the link you want to customize. Adjust the background-color value ("F00") and color value ("fff") to suite your preferences. Duplicate the section for each new link to be customized*/
