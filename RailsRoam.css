@@ -26,8 +26,8 @@
   --code-font-size: 1.0em;
 
   /* font colors */
-  --page-link-color: #eb9854;
-  --daily-notes-link-color:#eb9854;
+  --page-link-color: yellow; /* #eb9854; SPM CHANGED 9/29/20 */
+  --daily-notes-link-color: yellow; /* #eb9854; SPM CHANGED 9/29/20 */
   --external-link-color: #8DBB40;
   --sidebar-link-color: #8DBB40;
   --page-brackets: rgba(228, 124, 67, 0.25);
@@ -36,18 +36,18 @@
   --h3-font-color: #29bcfb; /* #1189BD; SPM CHANGED 6/7/20 */
   --strong: #29bcfb; /* #508BB5; SPM CHANGED 6/7/20 */
   --emphasis: #FC5963; /* CHANGED TO MASTER WHEN MERGED... SPM DID HAVE #c43835 */
-  --tag-font-color: Gold; /* #777; SPM CHANGED */
+  --tag-font-color: #f46c6c; /* Gold; CHANGED 9-29-20 /* #777; SPM CHANGED */
   --tag-font-color-hover:#fff;
-  --tag-hover-bg:#e98924;
+  --tag-hover-bg: red; /* #e98924; SPM CHANGED 9/29/20 */
   --tag-radius: 3px; /* 2em; SPM CHANGED 9/26/20 */
   --tag-padding: 2px 3px 2px 3px; /* 0.25em 0.4375em; SPM CHANGED 9/26/20 */
   --sidebar-font-color: #1189BD;
   --sidebar-font-color-hover:#e98924;
   --sidebar-hover-bg:#1f1f1f;
   --block-ref-bg: none;
-  --block-ref-border: rgba(254, 207, 43, .6);
-  --block-ref-hover: #eb9854;
-  --block-ref-hover-bg:#111;
+  --block-ref-border: #6f6f6f; /* rgba(254, 207, 43, .6); SPM CHANGED 9/29/20 */
+  --block-ref-hover: #36cbd6; /* #eb9854; SPM CHANGED 9/29/20 */
+  --block-ref-hover-bg: #232323; /* #111; SPM CHANGED 9/29/20 */
   --block-ref-font-size: 1.0em;
   --highlight-font-color: #222;
   --highlight-background-color: #fef09f;
@@ -3387,8 +3387,8 @@ div.rm-reference-item > div > div > div > span.bp3-icon-chevron-right {
   color: var(--reference-item-parent-sep-color);
 }
 
-/* SPM added 6/3/20 for {{calc: }} */
-div.rm-block-text span.bp3-popover-target > span {
+/* SPM UPDATED 9/29/20 for {{calc: }} */
+.rm-calc-val {
   color: lime !important;
 }
 
