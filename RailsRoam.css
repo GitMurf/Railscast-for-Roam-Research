@@ -45,7 +45,7 @@
   --sidebar-font-color-hover:#e98924;
   --sidebar-hover-bg:#1f1f1f;
   --block-ref-bg: none;
-  --block-ref-border: #6f6f6f; /* rgba(254, 207, 43, .6); SPM CHANGED 9/29/20 */
+  --block-ref-border: #24b0b0; /* rgba(254, 207, 43, .6); SPM CHANGED 9/29/20 */
   --block-ref-hover: #36cbd6; /* #eb9854; SPM CHANGED 9/29/20 */
   --block-ref-hover-bg: #232323; /* #111; SPM CHANGED 9/29/20 */
   --block-ref-font-size: 1.0em;
@@ -1577,7 +1577,7 @@ span.rm-page-ref.rm-page-ref-tag:hover {
   /* border-bottom: 0.5px solid #d8e1e8; */
   cursor: alias;
   /*RR change: keep the references blocks the same size*/
-  border-bottom: 1px solid var(--block-ref-border);
+  border-bottom: 1px dashed var(--block-ref-border); /* border-bottom: 1px solid var(--block-ref-border); SPM CHANGED 9/29/20 */
   font-size: var(--block-ref-font-size);
   background-color: var(--block-ref-bg);
 }
@@ -1589,6 +1589,9 @@ div.rm-block-ref {
   /*RR change: match other hover styles*/
   background-color: var(--block-ref-hover-bg);
   color: var(--block-ref-hover);
+}
+#right-sidebar .rm-block-ref:hover { /* SPM ADDED 9/29/20 because side bar has different background color */
+background-color: #2b2b2b;
 }
 .check-container {
   display: inline-block;
