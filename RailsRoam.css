@@ -36,9 +36,9 @@
   --h3-font-color: #29bcfb; /* #1189BD; SPM CHANGED 6/7/20 */
   --strong: #29bcfb; /* #508BB5; SPM CHANGED 6/7/20 */
   --emphasis: #FC5963; /* CHANGED TO MASTER WHEN MERGED... SPM DID HAVE #c43835 */
-  --tag-font-color: #f46c6c; /* Gold; CHANGED 9-29-20 /* #777; SPM CHANGED */
+  --tag-font-color: #777; /* #f46c6c; Gold; CHANGED 9-29-20 /* #777; SPM CHANGED */
   --tag-font-color-hover:#fff;
-  --tag-hover-bg: red; /* #e98924; SPM CHANGED 9/29/20 */
+  --tag-hover-bg: #e98924; /* red; #e98924; SPM CHANGED 9/29/20 */
   --tag-radius: 3px; /* 2em; SPM CHANGED 9/26/20 */
   --tag-padding: 2px 3px 2px 3px; /* 0.25em 0.4375em; SPM CHANGED 9/26/20 */
   --sidebar-font-color: #1189BD;
